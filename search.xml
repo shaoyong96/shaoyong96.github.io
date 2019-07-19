@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[SpringCloud配置SSH连接统一配置中心]]></title>
-    <url>%2F2019%2F07%2F19%2Fcjya9fj1g0002jgdahpr4ryzu%2F</url>
+    <url>%2F2019%2F07%2F19%2Fcjyaa749g0000h4da3m7ve0kh%2F</url>
     <content type="text"><![CDATA[当时在配置ssh连接的时候不知不觉就掉坑里去了，对一些知识点没完全理解； 先说说的掉坑，复制id_rsa文件内的文本出来，放进bootstrap.yml的privateKey中，如下图 启动报错 12Binding to target org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under &apos;spring.cloud.config.server.git&apos; to org.springframework.cloud.config.server.environment.MultipleJGitEnvironmentProperties failed: Reason: Property &apos;spring.cloud.config.server.git.privateKey&apos; is not a valid private key 我们看看官网怎么配spring.cloud.config.server.git的 有没有发现不一样，没错，官网配置的privateKey里少了前3行属性为什么？？？因为官网的秘钥在生成时是没有设置秘钥密码的，而我们的秘钥是有密码的，它没办法解密秘钥；解决办法两种： ==我们在生成秘钥时也不设置秘钥密码== ==在yml中配置的git属性添加passphrase== 下面是全配置过程，主要分3步 生成公钥与私钥打开Git Bash/Terminal，输入ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 引号里面替换成你的邮箱地址或标志自己身份的信息 提示保存秘钥的文件位置，直接回车保持默认位置 设置秘钥密码（直接回车则不设置秘钥密码），生成公钥、秘钥 完成之后可以在/root/.ssh/目录下找到公钥（id_rsa.pub）秘钥（id_rsa） 将公钥添加到git上复制id_rsa.pub的内容出来 打开github，进入需要拉取文件的仓库，进入设置标签页 点击Add Deploy key 输入GitHub密码确认 刚添加的公钥是灰色的，还没有被使用 在bootstrap.yml中配置把id_rsa的全部内容复制出来，放到private-key属性 注意： uri要用ssh形式的地址 ignore-local-ssh-settings设置为true，忽略本地的ssh配置 passphrase内要配置上面设置的秘钥密码 启动项目后，可以在Github的仓库设置中看到公钥已经被使用，变成了绿色。 至此spring-cloud-config使用ssh连接git就配置完成。 修改秘钥密码打开Git Bash/Terminal，输入ls-al ~/.ssh 检查之前是否已经生成了SSH key 如果是这样的那就说明已经生成过秘钥，可以选择修改修改私钥密码（passphrase）输入 ssh-keygen -p 直接回车继续，输入旧密码，然后输入两次新密码]]></content>
       <categories>
         <category>Java</category>
@@ -11,7 +11,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F07%2F18%2Fcjya9fj180000jgdan330lrqg%2F</url>
+    <url>%2F2019%2F07%2F18%2Fcjyaa749q0002h4da0dpt2qrq%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
