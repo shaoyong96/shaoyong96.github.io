@@ -1,8 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[SpringCloud配置SSH连接统一配置中心]]></title>
-    <url>%2F2019%2F07%2F19%2Fcjybpxs7v00015sdawksnvy41%2F</url>
+    <title><![CDATA[docker启动redis]]></title>
+    <url>%2F2019%2F07%2F21%2Fcjycihbbx0002xgdalco8l6jm%2F</url>
+    <content type="text"><![CDATA[12#docker中启动redis并设置密码docker run -d --name myredis -p 6379:6379 redis --requirepass "mypassword"]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[docker安装rabbitMq]]></title>
+    <url>%2F2019%2F07%2F21%2Fcjycihbc50006xgdag7wk2rsp%2F</url>
+    <content type="text"><![CDATA[12#设置rabbit默认用户与密码docker run -d --hostname rabbit-host --name rabbitMq -e RABBITMQ_DEFAULT_USER=username -e RABBITMQ_DEFAULT_PASS=password -p 5672:5672 -p 15672:15672 rabbitmq:3.7.3-management 12#在docker中停止rabbitMqdocker stop rabbitMq]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>rabbitMq</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[docker安装mysql5.7]]></title>
+    <url>%2F2019%2F07%2F21%2Fcjycihbc30005xgdacjcm8r94%2F</url>
+    <content type="text"><![CDATA[在Docker中mysql5.7安装和设置与8.0基本一致 1234567891011121314151617# docker 中下载 mysqldocker pull mysql:5.7#启动并设置root密码docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=your_password -d mysql:5.7#进入容器docker exec -it mysql bash#登录mysqlmysql -u root -p#设置root用户密码ALTER USER 'root'@'localhost' IDENTIFIED BY 'your_password';#添加远程登录用户CREATE USER 'your_username'@'%' IDENTIFIED WITH mysql_native_password BY 'your_password';GRANT ALL PRIVILEGES ON *.* TO 'your_password'@'%';]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在IDEA中使用Dockerfile]]></title>
+    <url>%2F2019%2F07%2F21%2Fcjycihbiv000uxgda2odorfs3%2F</url>
+    <content type="text"><![CDATA[在IDEA中使用Dockerfile简单步骤 在项目根目录创建Dockerfile文件 在Dockerfile中写入 1234567891011#引用基础镜像FROM java:8-jre#将需要在Docker中运行的jar包复制到镜像中ADD target/*.jar applicationName.jar#暴露端口EXPOSE 8888#容器启动时执行的命令ENTRYPOINT ["java", "-jar", "applicationName.jar", "--server.port=8888"] 使用maven打包项目，运行Dockerfile文件 ps:启动前需要配置IDEA与Docker服务器的连接]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Dockerflie</tag>
+        <tag>IDEA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Spring Cloud配置SSH连接统一配置中心]]></title>
+    <url>%2F2019%2F07%2F19%2Fcjycihbbp0001xgda4ugpdc41%2F</url>
     <content type="text"><![CDATA[当时在配置ssh连接的时候不知不觉就掉坑里去了，对一些知识点没完全理解； 先说说的掉坑，复制id_rsa文件内的文本出来，放进bootstrap.yml的privateKey中，如下图 启动报错 12Binding to target org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under &apos;spring.cloud.config.server.git&apos; to org.springframework.cloud.config.server.environment.MultipleJGitEnvironmentProperties failed: Reason: Property &apos;spring.cloud.config.server.git.privateKey&apos; is not a valid private key 我们看看官网怎么配spring.cloud.config.server.git的 有没有发现不一样，没错，官网配置的privateKey里少了前3行属性为什么？？？因为官网的秘钥在生成时是没有设置秘钥密码的，而我们的秘钥是有密码的，它没办法解密秘钥；解决办法两种： ==我们在生成秘钥时也不设置秘钥密码== ==在yml中配置的git属性添加passphrase== 下面是全配置过程，主要分3步 生成公钥与私钥打开Git Bash/Terminal，输入ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 引号里面替换成你的邮箱地址或标志自己身份的信息 提示保存秘钥的文件位置，直接回车保持默认位置 设置秘钥密码（直接回车则不设置秘钥密码），生成公钥、秘钥 完成之后可以在/root/.ssh/目录下找到公钥（id_rsa.pub）秘钥（id_rsa） 将公钥添加到git上复制id_rsa.pub的内容出来 打开github，进入需要拉取文件的仓库，进入设置标签页 点击Add Deploy key 输入GitHub密码确认 刚添加的公钥是灰色的，还没有被使用 在bootstrap.yml中配置把id_rsa的全部内容复制出来，放到private-key属性 注意： uri要用ssh形式的地址 ignore-local-ssh-settings设置为true，忽略本地的ssh配置 passphrase内要配置上面设置的秘钥密码 启动项目后，可以在Github的仓库设置中看到公钥已经被使用，变成了绿色。 至此spring-cloud-config使用ssh连接git就配置完成。 修改秘钥密码打开Git Bash/Terminal，输入ls-al ~/.ssh 检查之前是否已经生成了SSH key 如果是这样的那就说明已经生成过秘钥，可以选择修改修改私钥密码（passphrase）输入 ssh-keygen -p 直接回车继续，输入旧密码，然后输入两次新密码]]></content>
       <categories>
         <category>Java</category>
@@ -14,7 +63,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F07%2F18%2Fcjybpxs8200035sdasypco260%2F</url>
+    <url>%2F2019%2F07%2F18%2Fcjycihbc60007xgdat2651nd6%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
