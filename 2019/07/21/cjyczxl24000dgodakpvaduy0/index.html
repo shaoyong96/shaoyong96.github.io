@@ -105,18 +105,18 @@
   };
 </script>
 
-  <meta name="description" content="Docker中安装mysql5.7/8.0并设置密码和远程登入">
-<meta name="keywords" content="Mysql">
+  <meta name="description" content="Docker中安装rabbitMq">
+<meta name="keywords" content="RabbitMq">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker安装Mysql5.7">
-<meta property="og:url" content="http://www.shaoyong.online/2019/07/21/cjycisqp30005qsdabz3i7zom/index.html">
+<meta property="og:title" content="Docker安装RabbitMq">
+<meta property="og:url" content="http://www.shaoyong.online/2019/07/21/cjyczxl24000dgodakpvaduy0/index.html">
 <meta property="og:site_name" content="小屋">
-<meta property="og:description" content="Docker中安装mysql5.7/8.0并设置密码和远程登入">
+<meta property="og:description" content="Docker中安装rabbitMq">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-21T13:22:09.277Z">
+<meta property="og:updated_time" content="2019-07-21T13:22:14.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker安装Mysql5.7">
-<meta name="twitter:description" content="Docker中安装mysql5.7/8.0并设置密码和远程登入">
+<meta name="twitter:title" content="Docker安装RabbitMq">
+<meta name="twitter:description" content="Docker中安装rabbitMq">
 
 
 
@@ -124,7 +124,7 @@
 
   
   
-  <link rel="canonical" href="http://www.shaoyong.online/2019/07/21/cjycisqp30005qsdabz3i7zom/">
+  <link rel="canonical" href="http://www.shaoyong.online/2019/07/21/cjyczxl24000dgodakpvaduy0/">
 
 
 
@@ -135,7 +135,7 @@
 </script>
 
   
-  <title>Docker安装Mysql5.7 | 小屋</title>
+  <title>Docker安装RabbitMq | 小屋</title>
   
 
 
@@ -372,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.shaoyong.online/2019/07/21/cjycisqp30005qsdabz3i7zom/">
+    <link itemprop="mainEntityOfPage" href="http://www.shaoyong.online/2019/07/21/cjyczxl24000dgodakpvaduy0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shaoyong">
@@ -389,7 +389,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker安装Mysql5.7
+          <h1 class="post-title" itemprop="name headline">Docker安装RabbitMq
 
               
             
@@ -415,7 +415,7 @@
                 
               
 
-              <time title="创建时间：2019-07-21 12:26:59 / 修改时间：21:22:09" itemprop="dateCreated datePublished" datetime="2019-07-21T12:26:59+08:00">2019-07-21</time>
+              <time title="创建时间：2019-07-21 13:00:51 / 修改时间：21:22:14" itemprop="dateCreated datePublished" datetime="2019-07-21T13:00:51+08:00">2019-07-21</time>
             </span>
           
 
@@ -467,7 +467,7 @@
           
 
           
-            <div class="post-description">Docker中安装mysql5.7/8.0并设置密码和远程登入</div>
+            <div class="post-description">Docker中安装rabbitMq</div>
           
 
         </div>
@@ -483,8 +483,9 @@
       
 
       
-        <p>在Docker中mysql5.7安装和设置与8.0基本一致</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># docker 中下载 mysql</span></span><br><span class="line">docker pull mysql:5.7</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动并设置root密码</span></span><br><span class="line">docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=your_password -d mysql:5.7</span><br><span class="line"></span><br><span class="line"><span class="comment">#进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it mysql bash</span><br><span class="line"></span><br><span class="line"><span class="comment">#登录mysql</span></span><br><span class="line">mysql -u root -p</span><br><span class="line"><span class="comment">#设置root用户密码</span></span><br><span class="line">ALTER USER <span class="string">'root'</span>@<span class="string">'localhost'</span> IDENTIFIED BY <span class="string">'your_password'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加远程登录用户</span></span><br><span class="line">CREATE USER <span class="string">'your_username'</span>@<span class="string">'%'</span> IDENTIFIED WITH mysql_native_password BY <span class="string">'your_password'</span>;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO <span class="string">'your_password'</span>@<span class="string">'%'</span>;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置rabbit默认用户与密码</span></span><br><span class="line">docker run -d --hostname rabbit-host --name rabbitMq -e RABBITMQ_DEFAULT_USER=username -e RABBITMQ_DEFAULT_PASS=password -p 5672:5672 -p 15672:15672 rabbitmq:3.7.3-management</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在docker中停止rabbitMq</span></span><br><span class="line">docker stop rabbitMq</span><br></pre></td></tr></table></figure>
 
 
       
@@ -524,7 +525,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://www.shaoyong.online/2019/07/21/cjycisqp30005qsdabz3i7zom/" title="Docker安装Mysql5.7">http://www.shaoyong.online/2019/07/21/cjycisqp30005qsdabz3i7zom/</a>
+    <a href="http://www.shaoyong.online/2019/07/21/cjyczxl24000dgodakpvaduy0/" title="Docker安装RabbitMq">http://www.shaoyong.online/2019/07/21/cjyczxl24000dgodakpvaduy0/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -540,7 +541,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Mysql/" rel="tag"># Mysql</a>
+            <a href="/tags/RabbitMq/" rel="tag"># RabbitMq</a>
           
         </div>
       
@@ -573,8 +574,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/21/cjycisqp9000bqsdagau25wzu/" rel="next" title="在IDEA中使用Dockerfile">
-                <i class="fa fa-chevron-left"></i> 在IDEA中使用Dockerfile
+              <a href="/2019/07/21/cjyczxl1w0007godarhhn6rqk/" rel="next" title="Docker安装Mysql5.7">
+                <i class="fa fa-chevron-left"></i> Docker安装Mysql5.7
               </a>
             
           </div>
@@ -583,8 +584,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/21/cjycisqp60007qsdaviltdibb/" rel="prev" title="Docker安装RabbitMq">
-                Docker安装RabbitMq <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/21/cjyczxl1i0001goda8nu4n3gv/" rel="prev" title="Docker启动Redis">
+                Docker启动Redis <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -696,16 +697,6 @@
           
         
         
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
         
           
         
@@ -922,7 +913,7 @@
 
 <script>
   window.livereOptions = {
-    refer: '2019/07/21/cjycisqp30005qsdabz3i7zom/'
+    refer: '2019/07/21/cjyczxl24000dgodakpvaduy0/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
