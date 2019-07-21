@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[docker启动redis]]></title>
+    <title><![CDATA[CentOS7查杀nanoWath挖矿木马]]></title>
+    <url>%2F2019%2F07%2F21%2Fcjycz83k50000rwda2gw9hqjs%2F</url>
+    <content type="text"><![CDATA[前几天在查看服务器时状态时发现cpu占用率达到了103% 这个VPS主要是拿来玩玩，平时上面并没有什么大的服务再运行，不可能会占满CPU的；用shell客户端连上VPS，执行ps aux，其中一个叫nanoWatch的进程cpu占用率达到了99.5% 直接杀掉这个进程kill -9 17305,再检查进程，没发现异常 过了没几分钟，cpu占用又满了，查看进程，这个进程又出现了； 找到/tmp/nanoWatch这个文件，删掉这个文件，再杀掉进程，过了几分钟，进进程再次出现。 我怀疑是定时启动的任务， crontab -l查看cron计划任务，显示出来了两个定时任务，每5分钟和7分钟执行一次下载文件，我手动把这个文件下下来，是一个脚本 删除定时任务crontab -r，删掉文件，杀掉进程，结束了。 过了两天，又出现CPU占用异常。 我之前一直是用root用户并使用20端口进行ssh连接，这是非常不安全的行为，很容易被端口扫描暴力破解密码登录服务器。简单的解决办法如下 [TOC] 修改ssh连接端口用 root 用户进入 /etc/ssh/ 1234cd /etc/ssh/#用 vi 打开 sshd_config 文件vim sshd_config#添加端口20022（22号是默认端口，注释掉也是默认开启的），并解开22端口注释 123456789#重启ssh systemctl restart sshd#查看防火墙规则firewall-cmd --permanent --list-port#向防火墙中添加端口firewall-cmd --zone=public --add-port=20022/tcp --permanentreaload #重新加载防火墙规则firewall-cmd --reload 12#查看20022端口是否添加成功firewall-cmd --zone=public --query-port=20022/tcp 断开ssh连接，换用20022端口连接修改/etc/ssh/sshd_config将22号端口注释掉 1234#重启sshsystemctl restart sshd#查看ssh监听的端口ss -tnlp|grep ssh 禁用root登入，使用普通用户登入12345#先创建一个普通用户test,同时给test用户设置密码adduser testpasswd test#接着禁用root登录(修改sshd_config文件)vi /etc/ssh/sshd_config 12#重启sshSystemctl restart sshd.service]]></content>
+      <categories>
+        <category>服务器安全</category>
+      </categories>
+      <tags>
+        <tag>SSH</tag>
+        <tag>CentOS7</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker启动Redis]]></title>
     <url>%2F2019%2F07%2F21%2Fcjycisqos0001qsdanti6j08w%2F</url>
     <content type="text"><![CDATA[12#docker中启动redis并设置密码docker run -d --name myredis -p 6379:6379 redis --requirepass "mypassword"]]></content>
       <categories>
@@ -9,11 +21,11 @@
         <category>Docker</category>
       </categories>
       <tags>
-        <tag>redis</tag>
+        <tag>Redis</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[docker安装rabbitMq]]></title>
+    <title><![CDATA[Docker安装RabbitMq]]></title>
     <url>%2F2019%2F07%2F21%2Fcjycisqp60007qsdaviltdibb%2F</url>
     <content type="text"><![CDATA[12#设置rabbit默认用户与密码docker run -d --hostname rabbit-host --name rabbitMq -e RABBITMQ_DEFAULT_USER=username -e RABBITMQ_DEFAULT_PASS=password -p 5672:5672 -p 15672:15672 rabbitmq:3.7.3-management 12#在docker中停止rabbitMqdocker stop rabbitMq]]></content>
       <categories>
@@ -21,11 +33,11 @@
         <category>Docker</category>
       </categories>
       <tags>
-        <tag>rabbitMq</tag>
+        <tag>RabbitMq</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[docker安装mysql5.7]]></title>
+    <title><![CDATA[Docker安装Mysql5.7]]></title>
     <url>%2F2019%2F07%2F21%2Fcjycisqp30005qsdabz3i7zom%2F</url>
     <content type="text"><![CDATA[在Docker中mysql5.7安装和设置与8.0基本一致 1234567891011121314151617# docker 中下载 mysqldocker pull mysql:5.7#启动并设置root密码docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=your_password -d mysql:5.7#进入容器docker exec -it mysql bash#登录mysqlmysql -u root -p#设置root用户密码ALTER USER 'root'@'localhost' IDENTIFIED BY 'your_password';#添加远程登录用户CREATE USER 'your_username'@'%' IDENTIFIED WITH mysql_native_password BY 'your_password';GRANT ALL PRIVILEGES ON *.* TO 'your_password'@'%';]]></content>
       <categories>
