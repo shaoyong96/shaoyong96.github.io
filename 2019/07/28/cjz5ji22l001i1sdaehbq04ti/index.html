@@ -106,10 +106,10 @@
 </script>
 
   <meta name="description" content="这里记录下Python3与Java在面向对象方面的区别">
-<meta name="keywords" content="Python3,Java,OOP">
+<meta name="keywords" content="Java,Python3,OOP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python3与Java的对比之面向对象">
-<meta property="og:url" content="http://www.shaoyong.online/2019/07/28/cjyu81x3o000900da10t5n1fr/index.html">
+<meta property="og:url" content="http://www.shaoyong.online/2019/07/28/cjz5ji22l001i1sdaehbq04ti/index.html">
 <meta property="og:site_name" content="小屋">
 <meta property="og:description" content="这里记录下Python3与Java在面向对象方面的区别">
 <meta property="og:locale" content="zh-CN">
@@ -117,7 +117,9 @@
 <meta property="og:image" content="http://imagebed.shaoyong.online/images/2019_7_29/2.png">
 <meta property="og:image" content="http://imagebed.shaoyong.online/images/2019_7_29/3.png">
 <meta property="og:image" content="http://imagebed.shaoyong.online/images/2019_7_29/4.png">
-<meta property="og:updated_time" content="2019-07-29T09:13:29.596Z">
+<meta property="og:image" content="http://imagebed.shaoyong.online/images/2019_7_29/5.png">
+<meta property="og:image" content="http://imagebed.shaoyong.online/images/2019_7_29/6.png">
+<meta property="og:updated_time" content="2019-08-10T12:52:13.466Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python3与Java的对比之面向对象">
 <meta name="twitter:description" content="这里记录下Python3与Java在面向对象方面的区别">
@@ -129,7 +131,7 @@
 
   
   
-  <link rel="canonical" href="http://www.shaoyong.online/2019/07/28/cjyu81x3o000900da10t5n1fr/">
+  <link rel="canonical" href="http://www.shaoyong.online/2019/07/28/cjz5ji22l001i1sdaehbq04ti/">
 
 
 
@@ -377,7 +379,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.shaoyong.online/2019/07/28/cjyu81x3o000900da10t5n1fr/">
+    <link itemprop="mainEntityOfPage" href="http://www.shaoyong.online/2019/07/28/cjz5ji22l001i1sdaehbq04ti/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shaoyong">
@@ -435,7 +437,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-29 17:13:29" itemprop="dateModified" datetime="2019-07-29T17:13:29+08:00">2019-07-29</time>
+                <time title="修改时间：2019-08-10 20:52:13" itemprop="dateModified" datetime="2019-08-10T20:52:13+08:00">2019-08-10</time>
               </span>
             
           
@@ -503,7 +505,7 @@
 
 <p>​        Java执行结果</p>
 <p><img src="http://imagebed.shaoyong.online/images/2019_7_29/1.png" alt></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span>:</span></span><br><span class="line">    <span class="string">"""People"""</span></span><br><span class="line">    <span class="comment"># 私有属性</span></span><br><span class="line">    __gift = <span class="number">100</span></span><br><span class="line">    <span class="comment"># 类属性</span></span><br><span class="line">    name = <span class="string">''</span></span><br><span class="line">    age = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 实例化方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, gender)</span>:</span></span><br><span class="line">        print(<span class="string">"【PPeople】构造方法"</span>)</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        self.gender = gender</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 静态方法</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sf</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">"【PPeople】静态方法"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 类方法</span></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cf</span><span class="params">(cls)</span>:</span></span><br><span class="line">        print(<span class="string">"【PPeople】类方法"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 实例方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say_hello</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"【PPeople】&#123;&#125; say：\"Hello!\",gift=&#123;&#125;"</span>.format(self.name, self.__gift))</span><br><span class="line">        self.__pf()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 私有方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__pf</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"【PPeople】私有方法"</span>)</span><br><span class="line"></span><br><span class="line">People.age += <span class="number">1</span></span><br><span class="line">print(People.age)</span><br><span class="line">People.sf()</span><br><span class="line">tom = People(<span class="string">'Tom'</span>, <span class="number">18</span>, <span class="string">'male'</span>)</span><br><span class="line">print(tom.gender)</span><br><span class="line">tom.say_hello()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span>:</span></span><br><span class="line">    <span class="string">"""People"""</span></span><br><span class="line">    <span class="comment"># 私有属性</span></span><br><span class="line">    __gift = <span class="number">100</span></span><br><span class="line">    <span class="comment"># 类属性</span></span><br><span class="line">    name = <span class="string">''</span></span><br><span class="line">    age = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 限定对象只能绑定_gender属性</span></span><br><span class="line">    <span class="comment"># __slots__=('_gender')</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 实例化方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, gender)</span>:</span></span><br><span class="line">        print(<span class="string">"【PPeople】构造方法"</span>)</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        self._gender = gender</span><br><span class="line"></span><br><span class="line">    <span class="comment"># getter方法</span></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">gender</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._gender</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># setter方法</span></span><br><span class="line"><span class="meta">    @gender.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">gender</span><span class="params">(self,gender)</span>:</span></span><br><span class="line">        self._gender=gender</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 静态方法</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sf</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">"【PPeople】静态方法"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 类方法</span></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cf</span><span class="params">(cls)</span>:</span></span><br><span class="line">        print(<span class="string">"【PPeople】类方法"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 实例方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say_hello</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"【PPeople】&#123;&#125; say：\"Hello!\",gift=&#123;&#125;"</span>.format(self.name, self.__gift))</span><br><span class="line">        self.__pf()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 私有方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__pf</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"【PPeople】私有方法"</span>)</span><br><span class="line"></span><br><span class="line">People.age += <span class="number">1</span></span><br><span class="line">print(People.age)</span><br><span class="line">People.sf()</span><br><span class="line">tom = People(<span class="string">'Tom'</span>, <span class="number">18</span>, <span class="string">'male'</span>)</span><br><span class="line">tom.gender=<span class="string">"female"</span></span><br><span class="line">print(tom.gender)</span><br><span class="line">tom.say_hello()</span><br></pre></td></tr></table></figure>
 
 <p>​        Python执行结果</p>
 <p><img src="http://imagebed.shaoyong.online/images/2019_7_29/2.png" alt></p>
@@ -518,7 +520,7 @@
 <tbody><tr>
 <td>私有属性</td>
 <td>（成员变量）使用<code>private</code>关键字修饰</td>
-<td>属性名双下划线开头<code>__</code></td>
+<td>属性名双下划线开头<code>__</code>；不建议将属性设置为私有，建议以<code>_</code>(单下划线)开头，暗示属性为受保护的，不建议外部直接访问，建议使用getter、setter进行操作</td>
 </tr>
 <tr>
 <td>类属性</td>
@@ -561,6 +563,20 @@
 <p>​        Python执行结果</p>
 <p><img src="http://imagebed.shaoyong.online/images/2019_7_29/4.png" alt></p>
 <h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>​        Java与Python 3 在掉用构造方法时顺序是一致的，但是Java在构造方法内调用父类构造方法语句<code>super()</code>必须放在方法体的第一句；而Python 3，对象是由 <code>__new__()</code>和<code>__init__()</code>协作构造完成，实例通过<code>__new__</code>方法被创建，使用<code>__init__</code>方法进行初始化；所以在调用父类方法之前，可以对参数进行定制修改。Python 3 的多继承，在搜索从父类继承的方法/属性时，可以简单认为是深度优先、从左至右；但为了保持单次调用，实际在调用时是<a href="https://www.python.org/download/releases/2.3/mro/" target="_blank" rel="noopener">动态</a>的；</p>
+<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><p>​    实现多态的步骤：1.继承父类    2.重写父类方法    3.向上转型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**1.Teacher继承自People**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Teacher</span> <span class="keyword">extends</span> <span class="title">People</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Teacher</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Teacher</span><span class="params">(String name, <span class="keyword">int</span> age, String gender)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age, gender);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//2.重写sayHello方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"【JTeacher】"</span>+<span class="keyword">this</span>.getName() + <span class="string">"：\" 同学们早上好！\""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//3.向上转型</span></span><br><span class="line">        People teacher= <span class="keyword">new</span> Teacher(<span class="string">"王阳明"</span>,<span class="number">45</span>,<span class="string">"男"</span>);</span><br><span class="line">        teacher.sayHello();</span><br><span class="line">        People student =<span class="keyword">new</span> Student(<span class="string">"小明"</span>, <span class="number">17</span>, <span class="string">"男"</span>, <span class="string">"0021"</span>);</span><br><span class="line">        student.sayHello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>java运行结果：</p>
+<p><img src="http://imagebed.shaoyong.online/images/2019_7_29/5.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Teacher</span><span class="params">(People)</span>:</span></span><br><span class="line">    <span class="string">"""继承自People"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, gender)</span>:</span></span><br><span class="line">        print(<span class="string">"【PTeacher】构造方法--开始"</span>)</span><br><span class="line">        super(Teacher, self).__init__(name, age, gender)</span><br><span class="line">        print(<span class="string">"【PTeacher】构造方法--结束"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say_hello</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"【PTeacher】&#123;&#125; say：\"同学们好！\""</span>.format(self.name))</span><br><span class="line">        </span><br><span class="line">people_1 = Student(<span class="string">"小明"</span>, <span class="number">12</span>, <span class="string">"男"</span>, <span class="string">"0023"</span>)</span><br><span class="line">people_1.say_hello()</span><br><span class="line">people_2 = Teacher(<span class="string">"王阳明"</span>, <span class="number">45</span>, <span class="string">"男"</span>)</span><br><span class="line">people_2.say_hello()</span><br></pre></td></tr></table></figure>
+
+<p>Python运行结果：</p>
+<p><img src="http://imagebed.shaoyong.online/images/2019_7_29/6.png" alt></p>
+<h2 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h2><blockquote>
+<p>Python从语法层面并没有像Java那样提供对抽象类的支持，但是我们可以通过<code>abc</code>模块的<code>ABCMeta</code>元类和<code>abstractmethod</code>（<code>class CLASSNAME(metaclass=ABCMeta):</code>）包装器来达到抽象类的效果，如果一个类中存在抽象方法那么这个类就不能够实例化。</p>
+</blockquote>
 
       
     </div>
@@ -599,7 +615,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://www.shaoyong.online/2019/07/28/cjyu81x3o000900da10t5n1fr/" title="Python3与Java的对比之面向对象">http://www.shaoyong.online/2019/07/28/cjyu81x3o000900da10t5n1fr/</a>
+    <a href="http://www.shaoyong.online/2019/07/28/cjz5ji22l001i1sdaehbq04ti/" title="Python3与Java的对比之面向对象">http://www.shaoyong.online/2019/07/28/cjz5ji22l001i1sdaehbq04ti/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -615,9 +631,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Python3/" rel="tag"># Python3</a>
-          
             <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Python3/" rel="tag"># Python3</a>
           
             <a href="/tags/OOP/" rel="tag"># OOP</a>
           
@@ -652,7 +668,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/21/cjyu81x3m000700da45ulghvf/" rel="next" title="CentOS7查杀nanoWath挖矿木马">
+              <a href="/2019/07/21/cjz5ji1v500071sdaigqfegui/" rel="next" title="CentOS7查杀nanoWath挖矿木马">
                 <i class="fa fa-chevron-left"></i> CentOS7查杀nanoWath挖矿木马
               </a>
             
@@ -662,7 +678,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/30/cjyu81x3x000e00da4ldrnmaz/" rel="prev" title="面试题">
+              <a href="/2019/07/30/cjz5ji1vc000d1sdagpn41yg2/" rel="prev" title="面试题">
                 面试题 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -862,7 +878,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类"><span class="nav-number">1.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.1.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-1"><span class="nav-number">2.1.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类"><span class="nav-number">1.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.1.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-1"><span class="nav-number">2.1.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">3.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-2"><span class="nav-number">3.1.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1035,7 +1051,7 @@
 
 <script>
   window.livereOptions = {
-    refer: '2019/07/28/cjyu81x3o000900da10t5n1fr/'
+    refer: '2019/07/28/cjz5ji22l001i1sdaehbq04ti/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];

@@ -105,18 +105,18 @@
   };
 </script>
 
-  <meta name="description" content="docker启动redis并设置密码">
-<meta name="keywords" content="Redis">
+  <meta name="description" content="Docker中安装rabbitMq">
+<meta name="keywords" content="RabbitMq">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker启动Redis">
-<meta property="og:url" content="http://www.shaoyong.online/2019/07/21/cjyu81x3n000800daitny7ktb/index.html">
+<meta property="og:title" content="Docker安装RabbitMq">
+<meta property="og:url" content="http://www.shaoyong.online/2019/07/21/cjz5ji1vg000g1sdahqfzvc6e/index.html">
 <meta property="og:site_name" content="小屋">
-<meta property="og:description" content="docker启动redis并设置密码">
+<meta property="og:description" content="Docker中安装rabbitMq">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-21T13:22:20.284Z">
+<meta property="og:updated_time" content="2019-07-21T13:22:14.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker启动Redis">
-<meta name="twitter:description" content="docker启动redis并设置密码">
+<meta name="twitter:title" content="Docker安装RabbitMq">
+<meta name="twitter:description" content="Docker中安装rabbitMq">
 
 
 
@@ -124,7 +124,7 @@
 
   
   
-  <link rel="canonical" href="http://www.shaoyong.online/2019/07/21/cjyu81x3n000800daitny7ktb/">
+  <link rel="canonical" href="http://www.shaoyong.online/2019/07/21/cjz5ji1vg000g1sdahqfzvc6e/">
 
 
 
@@ -135,7 +135,7 @@
 </script>
 
   
-  <title>Docker启动Redis | 小屋</title>
+  <title>Docker安装RabbitMq | 小屋</title>
   
 
 
@@ -372,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.shaoyong.online/2019/07/21/cjyu81x3n000800daitny7ktb/">
+    <link itemprop="mainEntityOfPage" href="http://www.shaoyong.online/2019/07/21/cjz5ji1vg000g1sdahqfzvc6e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shaoyong">
@@ -389,7 +389,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker启动Redis
+          <h1 class="post-title" itemprop="name headline">Docker安装RabbitMq
 
               
             
@@ -415,7 +415,7 @@
                 
               
 
-              <time title="创建时间：2019-07-21 13:10:08 / 修改时间：21:22:20" itemprop="dateCreated datePublished" datetime="2019-07-21T13:10:08+08:00">2019-07-21</time>
+              <time title="创建时间：2019-07-21 13:00:51 / 修改时间：21:22:14" itemprop="dateCreated datePublished" datetime="2019-07-21T13:00:51+08:00">2019-07-21</time>
             </span>
           
 
@@ -467,7 +467,7 @@
           
 
           
-            <div class="post-description">docker启动redis并设置密码</div>
+            <div class="post-description">Docker中安装rabbitMq</div>
           
 
         </div>
@@ -483,7 +483,9 @@
       
 
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#docker中启动redis并设置密码</span></span><br><span class="line">docker run -d --name myredis -p 6379:6379 redis --requirepass <span class="string">"mypassword"</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置rabbit默认用户与密码</span></span><br><span class="line">docker run -d --hostname rabbit-host --name rabbitMq -e RABBITMQ_DEFAULT_USER=username -e RABBITMQ_DEFAULT_PASS=password -p 5672:5672 -p 15672:15672 rabbitmq:3.7.3-management</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在docker中停止rabbitMq</span></span><br><span class="line">docker stop rabbitMq</span><br></pre></td></tr></table></figure>
 
 
       
@@ -523,7 +525,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://www.shaoyong.online/2019/07/21/cjyu81x3n000800daitny7ktb/" title="Docker启动Redis">http://www.shaoyong.online/2019/07/21/cjyu81x3n000800daitny7ktb/</a>
+    <a href="http://www.shaoyong.online/2019/07/21/cjz5ji1vg000g1sdahqfzvc6e/" title="Docker安装RabbitMq">http://www.shaoyong.online/2019/07/21/cjz5ji1vg000g1sdahqfzvc6e/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -539,7 +541,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Redis/" rel="tag"># Redis</a>
+            <a href="/tags/RabbitMq/" rel="tag"># RabbitMq</a>
           
         </div>
       
@@ -572,8 +574,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/21/cjyu81x3v000d00daeiszz2dp/" rel="next" title="Docker安装RabbitMq">
-                <i class="fa fa-chevron-left"></i> Docker安装RabbitMq
+              <a href="/2019/07/21/cjz5ji1vk000k1sdanzuuu9ap/" rel="next" title="Docker安装Mysql5.7">
+                <i class="fa fa-chevron-left"></i> Docker安装Mysql5.7
               </a>
             
           </div>
@@ -582,8 +584,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/21/cjyu81x3m000700da45ulghvf/" rel="prev" title="CentOS7查杀nanoWath挖矿木马">
-                CentOS7查杀nanoWath挖矿木马 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/21/cjz5ji1v900091sda91qdmhzd/" rel="prev" title="Docker启动Redis">
+                Docker启动Redis <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -929,7 +931,7 @@
 
 <script>
   window.livereOptions = {
-    refer: '2019/07/21/cjyu81x3n000800daitny7ktb/'
+    refer: '2019/07/21/cjz5ji1vg000g1sdahqfzvc6e/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
