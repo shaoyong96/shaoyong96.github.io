@@ -105,26 +105,28 @@
   };
 </script>
 
-  <meta name="description" content="一个简单的Dockerfile文件">
-<meta name="keywords" content="Dockerflie,IDEA">
+  <meta name="description" content="Docker中安装mysql5.7/8.0并设置密码和远程登入">
+<meta name="keywords" content="Mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在IDEA中使用Dockerfile">
-<meta property="og:url" content="http://www.shaoyong.online/2019/07/21/cjzpekjol000mfwdaq1y0j92e/index.html">
-<meta property="og:site_name" content="小屋">
-<meta property="og:description" content="一个简单的Dockerfile文件">
+<meta property="og:title" content="Docker安装Mysql5.7">
+<meta property="og:url" content="http://www.shaoyong.online/2019/07/21/cjzpl17v3000d5odamn2fia0d/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="Docker中安装mysql5.7/8.0并设置密码和远程登入">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-21T05:15:10.660Z">
+<meta property="og:updated_time" content="2019-07-21T13:22:09.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在IDEA中使用Dockerfile">
-<meta name="twitter:description" content="一个简单的Dockerfile文件">
+<meta name="twitter:title" content="Docker安装Mysql5.7">
+<meta name="twitter:description" content="Docker中安装mysql5.7/8.0并设置密码和远程登入">
 
 
+
+  <link rel="alternate" href="/atom.xml" title="博客" type="application/atom+xml">
 
 
 
   
   
-  <link rel="canonical" href="http://www.shaoyong.online/2019/07/21/cjzpekjol000mfwdaq1y0j92e/">
+  <link rel="canonical" href="http://www.shaoyong.online/2019/07/21/cjzpl17v3000d5odamn2fia0d/">
 
 
 
@@ -135,7 +137,7 @@
 </script>
 
   
-  <title>在IDEA中使用Dockerfile | 小屋</title>
+  <title>Docker安装Mysql5.7 | 博客</title>
   
 
 
@@ -205,18 +207,14 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">小屋</span>
+        <span class="site-title">博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
     
-      
-        <p class="site-subtitle">博客</p>
-      
-    
     
       <a>
-        <img class="custom-logo-image" src="http://shaoyong96.coding.me/imagebed/images/info/logo_white.png" alt="小屋">
+        <img class="custom-logo-image" src="http://shaoyong96.coding.me/imagebed/images/info/logo_white.png" alt="博客">
       </a>
     
   </div>
@@ -376,16 +374,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.shaoyong.online/2019/07/21/cjzpekjol000mfwdaq1y0j92e/">
+    <link itemprop="mainEntityOfPage" href="http://www.shaoyong.online/2019/07/21/cjzpl17v3000d5odamn2fia0d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shaoyong">
-      <meta itemprop="description" content="小屋在建中...">
+      <meta itemprop="description" content="博客在建中...">
       <meta itemprop="image" content="http://imagebed.shaoyong.online/images/info/avatar_morty.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小屋">
+      <meta itemprop="name" content="博客">
     </span>
 
     
@@ -393,7 +391,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">在IDEA中使用Dockerfile
+          <h1 class="post-title" itemprop="name headline">Docker安装Mysql5.7
 
               
             
@@ -419,7 +417,7 @@
                 
               
 
-              <time title="创建时间：2019-07-21 11:34:32 / 修改时间：13:15:10" itemprop="dateCreated datePublished" datetime="2019-07-21T11:34:32+08:00">2019-07-21</time>
+              <time title="创建时间：2019-07-21 12:26:59 / 修改时间：21:22:09" itemprop="dateCreated datePublished" datetime="2019-07-21T12:26:59+08:00">2019-07-21</time>
             </span>
           
 
@@ -471,7 +469,7 @@
           
 
           
-            <div class="post-description">一个简单的Dockerfile文件</div>
+            <div class="post-description">Docker中安装mysql5.7/8.0并设置密码和远程登入</div>
           
 
         </div>
@@ -487,17 +485,9 @@
       
 
       
-        <p>在IDEA中使用Dockerfile简单步骤</p>
-<ol>
-<li><p>在项目根目录创建Dockerfile文件</p>
-</li>
-<li><p>在Dockerfile中写入</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#引用基础镜像</span></span><br><span class="line"><span class="keyword">FROM</span> java:<span class="number">8</span>-jre</span><br><span class="line"></span><br><span class="line"><span class="comment">#将需要在Docker中运行的jar包复制到镜像中</span></span><br><span class="line"><span class="keyword">ADD</span><span class="bash"> target/*.jar applicationName.jar</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#暴露端口</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">8888</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#容器启动时执行的命令</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="bash"> [<span class="string">"java"</span>, <span class="string">"-jar"</span>, <span class="string">"applicationName.jar"</span>, <span class="string">"--server.port=8888"</span>]</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用maven打包项目，运行Dockerfile文件</p>
-</li>
-</ol>
-<p><strong>ps:启动前需要配置IDEA与Docker服务器的连接</strong></p>
+        <p>在Docker中mysql5.7安装和设置与8.0基本一致</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># docker 中下载 mysql</span></span><br><span class="line">docker pull mysql:5.7</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动并设置root密码</span></span><br><span class="line">docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=your_password -d mysql:5.7</span><br><span class="line"></span><br><span class="line"><span class="comment">#进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it mysql bash</span><br><span class="line"></span><br><span class="line"><span class="comment">#登录mysql</span></span><br><span class="line">mysql -u root -p</span><br><span class="line"><span class="comment">#设置root用户密码</span></span><br><span class="line">ALTER USER <span class="string">'root'</span>@<span class="string">'localhost'</span> IDENTIFIED BY <span class="string">'your_password'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加远程登录用户</span></span><br><span class="line">CREATE USER <span class="string">'your_username'</span>@<span class="string">'%'</span> IDENTIFIED WITH mysql_native_password BY <span class="string">'your_password'</span>;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO <span class="string">'your_password'</span>@<span class="string">'%'</span>;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -536,7 +526,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://www.shaoyong.online/2019/07/21/cjzpekjol000mfwdaq1y0j92e/" title="在IDEA中使用Dockerfile">http://www.shaoyong.online/2019/07/21/cjzpekjol000mfwdaq1y0j92e/</a>
+    <a href="http://www.shaoyong.online/2019/07/21/cjzpl17v3000d5odamn2fia0d/" title="Docker安装Mysql5.7">http://www.shaoyong.online/2019/07/21/cjzpl17v3000d5odamn2fia0d/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -552,9 +542,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Dockerflie/" rel="tag"># Dockerflie</a>
-          
-            <a href="/tags/IDEA/" rel="tag"># IDEA</a>
+            <a href="/tags/Mysql/" rel="tag"># Mysql</a>
           
         </div>
       
@@ -587,8 +575,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/19/cjzpekjo50008fwdaiele94r0/" rel="next" title="Spring Cloud配置SSH连接统一配置中心">
-                <i class="fa fa-chevron-left"></i> Spring Cloud配置SSH连接统一配置中心
+              <a href="/2019/07/21/cjzpl17vd000p5odaty7s3o4l/" rel="next" title="在IDEA中使用Dockerfile">
+                <i class="fa fa-chevron-left"></i> 在IDEA中使用Dockerfile
               </a>
             
           </div>
@@ -597,8 +585,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/21/cjzpekjoc000dfwdas02zs93w/" rel="prev" title="Docker安装Mysql5.7">
-                Docker安装Mysql5.7 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/21/cjzpl17v8000h5oda0yzq10vz/" rel="prev" title="Docker安装RabbitMq">
+                Docker安装RabbitMq <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -657,7 +645,7 @@
     <img class="site-author-image" itemprop="image" src="http://imagebed.shaoyong.online/images/info/avatar_morty.jpg" alt="Shaoyong">
   
   <p class="site-author-name" itemprop="name">Shaoyong</p>
-  <div class="site-description motion-element" itemprop="description">小屋在建中...</div>
+  <div class="site-description motion-element" itemprop="description">博客在建中...</div>
 </div>
 
 
@@ -764,6 +752,12 @@
 
 
 
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
 
 
 
@@ -816,15 +810,9 @@
 </div>
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
 
 
 
@@ -956,7 +944,7 @@
 
 <script>
   window.livereOptions = {
-    refer: '2019/07/21/cjzpekjol000mfwdaq1y0j92e/'
+    refer: '2019/07/21/cjzpl17v3000d5odamn2fia0d/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
