@@ -413,7 +413,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/29/ck0kpjunn002fscdaxw3p9nvp/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/29/ck0ktlp1n002jc0dan9qdm0gq/" itemprop="url">
             
               <span itemprop="name">java中Map、Collection接口常用实现类源码浅析</span>
             
@@ -448,7 +448,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/23/ck0kpjubn0003scdak0xnt4lw/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/23/ck0ktloz80000c0dawen5m84t/" itemprop="url">
             
               <span itemprop="name">Java 设计模式之桥接模式</span>
             
@@ -483,7 +483,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/22/ck0kpjubw0006scda1gf5whit/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/22/ck0ktlozh0002c0dam46udx9b/" itemprop="url">
             
               <span itemprop="name">Java 设计模式之适配器模式</span>
             
@@ -518,7 +518,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/19/ck0kpjubc0001scdasvd23on4/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/19/ck0ktlp09000uc0dam7fd53qs/" itemprop="url">
             
               <span itemprop="name">IntelliJ IDEA中常见的Icon代表什么意义</span>
             
@@ -553,7 +553,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/16/ck0kpjuco000jscdalkrlk5d2/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/16/ck0ktlp00000hc0datekxlyco/" itemprop="url">
             
               <span itemprop="name">Java 中使用Lambda表达式</span>
             
@@ -588,7 +588,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/10/ck0kpjuct000mscda99d8t3vj/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/10/ck0ktlp01000jc0dasv6ixknz/" itemprop="url">
             
               <span itemprop="name">Python 3 实现常见排序算法</span>
             
@@ -623,7 +623,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/02/ck0kpjuu4002rscdas1jqqmsw/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/02/ck0ktlp5p002vc0da9cdvm6xx/" itemprop="url">
             
               <span itemprop="name">Python 3 实例</span>
             
@@ -1310,6 +1310,102 @@
   
 
   
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+  
+  <script>
+    (function () {
+
+      firebase.initializeApp({
+        apiKey: 'AIzaSyAch1Z6Jq8h0UqZKPmuRFcwK_dy9e-7FkE',
+        projectId: 'myblog-7265c'
+      })
+
+      function getCount(doc, increaseCount) {
+        //increaseCount will be false when not in article page
+
+        return doc.get().then(function (d) {
+          var count
+          if (!d.exists) { //has no data, initialize count
+            if (increaseCount) {
+              doc.set({
+                count: 1
+              })
+              count = 1
+            }
+            else {
+              count = 0
+            }
+          }
+          else { //has data
+            count = d.data().count
+            if (increaseCount) {
+              if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
+                doc.set({ //increase count
+                  count: count + 1
+                })
+                count++
+              }
+            }
+          }
+          if (window.localStorage && increaseCount) { //mark as visited
+            localStorage.setItem(title, true)
+          }
+
+          return count
+        })
+      }
+
+      function appendCountTo(el) {
+        return function (count) {
+          $(el).append(
+            $('<span>').addClass('post-visitors-count').append(
+              $('<span>').addClass('post-meta-divider').text('|')
+            ).append(
+              $('<span>').addClass('post-meta-item-icon').append(
+                $('<i>').addClass('fa fa-users')
+              )
+              ).append($('<span>').text('阅读次数 ' + count))
+          )
+        }
+      }
+
+      var db = firebase.firestore()
+      var articles = db.collection('articles')
+
+      //https://hexo.io/docs/variables.html
+      var isPost = ''.length > 0
+      var isArchive = 'true' === 'true'
+      var isCategory = ''.length > 0
+      var isTag = ''.length > 0
+
+      if (isPost) { //is article page
+        var title = ''
+        var doc = articles.doc(title)
+
+        getCount(doc, true).then(appendCountTo($('.post-meta')))
+      }
+      else if (!isArchive && !isCategory && !isTag) { //is index page
+        var titles = [] //array to titles
+
+        var postsstr = 'titles.push("java中Map、Collection接口常用实现类源码浅析");titles.push("Java 设计模式之桥接模式");titles.push("Java 设计模式之适配器模式");titles.push("IntelliJ IDEA中常见的Icon代表什么意义");titles.push("Java 中使用Lambda表达式");titles.push("Python 3 实现常见排序算法");titles.push("Python 3 实例");' //if you have a better way to get titles of posts, please change it
+        eval(postsstr)
+
+        var promises = titles.map(function (title) {
+          return articles.doc(title)
+        }).map(function (doc) {
+          return getCount(doc)
+        })
+        Promise.all(promises).then(function (counts) {
+          var metas = $('.post-meta')
+          counts.forEach(function (val, idx) {
+            appendCountTo(metas[idx])(val)
+          })
+        })
+      }
+    })()
+  </script>
+
 
   
 
