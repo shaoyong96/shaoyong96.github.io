@@ -393,7 +393,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/19/ck0khm7gp0007g4da2lr9uj0v/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/19/ck0kk3hry0001hwdavmsftnn5/" itemprop="url">
             
               <span itemprop="name">IntelliJ IDEA中常见的Icon代表什么意义</span>
             
@@ -419,7 +419,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/28/ck0khm7ix002fg4dat8p9tjpa/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/28/ck0kk3hyp0026hwday8re52we/" itemprop="url">
             
               <span itemprop="name">Python3与Java的简单对比之面向对象</span>
             
@@ -445,7 +445,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/21/ck0khm7gy000dg4day8r4g3nt/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/21/ck0kk3hse000chwdaocoyneeo/" itemprop="url">
             
               <span itemprop="name">Docker启动Redis</span>
             
@@ -471,7 +471,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/21/ck0khm7h3000hg4dapl79wdsp/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/21/ck0kk3hsl000hhwda1nh70dyc/" itemprop="url">
             
               <span itemprop="name">Docker安装RabbitMq</span>
             
@@ -497,7 +497,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/21/ck0khm7h0000eg4da01mr9vye/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/21/ck0kk3hsg000dhwdaw2a64n2v/" itemprop="url">
             
               <span itemprop="name">Docker安装Mysql5.7</span>
             
@@ -523,7 +523,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/21/ck0khm7h8000og4daiw40ecux/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/21/ck0kk3hsr000ohwdal6yfm8a1/" itemprop="url">
             
               <span itemprop="name">在IDEA中使用Dockerfile</span>
             
@@ -878,6 +878,32 @@
   
 
   
+  
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'stVLBQR3QVCq6VLVs3jBW4T0-gzGzoHsz',
+    appKey: 'HNwKleNlyUQkjdvI6Y9Hk3VL',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
 
 
 
@@ -1207,74 +1233,6 @@
 
 
   
-  
-  <script>
-    
-    function showTime(Counter) {
-      var entries = [];
-      var $visitors = $('.leancloud_visitors');
-
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
-        .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + '')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': '',
-                'X-LC-Key': '',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
-          
-        });
-    });
-  </script>
-
-
 
   
 
