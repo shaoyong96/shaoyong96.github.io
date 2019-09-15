@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://imagebed.shaoyong.online/images/info/avatar1.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://imagebed.shaoyong.online/images/info/avatar1.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="https://imagebed.shaoyong.online/images/info/avatar1.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="https://imagebed.shaoyong.online/images/info/avatar1.png?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="使用Python 3时编写的简单实例">
+<meta name="keywords" content="实例,练习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 3 实例">
+<meta property="og:url" content="http://www.shaoyong.online/posts/50958/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="使用Python 3时编写的简单实例">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-15T10:34:46.065Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python 3 实例">
+<meta name="twitter:description" content="使用Python 3时编写的简单实例">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="博客" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://www.shaoyong.online/posts/50958/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>Python 3 实例 | 博客</title>
+  
+
+
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144200325-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-144200325-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+      <a>
+        <img class="custom-logo-image" src="http://shaoyong96.coding.me/imagebed/images/info/logo_white.png" alt="博客">
+      </a>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.shaoyong.online/posts/50958/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaoyong">
+      <meta itemprop="description" content="博客在建中...">
+      <meta itemprop="image" content="http://imagebed.shaoyong.online/images/info/avatar_morty.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python 3 实例
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-02 22:21:22" itemprop="dateCreated datePublished" datetime="2019-08-02T22:21:22+08:00">2019-08-02</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-15 18:34:46" itemprop="dateModified" datetime="2019-09-15T18:34:46+08:00">2019-09-15</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python-3/" itemprop="url" rel="index"><span itemprop="name">Python 3</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+            <div class="post-description">使用Python 3时编写的简单实例</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li><h6 id="摄氏度转华氏度"><a href="#摄氏度转华氏度" class="headerlink" title="摄氏度转华氏度"></a>摄氏度转华氏度</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = float(input(<span class="string">"输入摄氏度："</span>))</span><br><span class="line">b = a * <span class="number">1.8</span> + <span class="number">32</span></span><br><span class="line">print(<span class="string">"摄氏度：&#123;&#125;℃ = 华氏度：&#123;&#125;℉"</span>.format(a, b))</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><h6 id="求园的面积"><a href="#求园的面积" class="headerlink" title="求园的面积"></a>求园的面积</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r = float(input(<span class="string">"输入园半径："</span>))</span><br><span class="line">area = math.pi*r**<span class="number">2</span></span><br><span class="line">print(<span class="string">"半径为&#123;&#125;的园面积为&#123;&#125;"</span>.format(r, area))</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><h6 id="开平方根"><a href="#开平方根" class="headerlink" title="开平方根"></a>开平方根</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num1 = float(input(<span class="string">"输入一个数："</span>))</span><br><span class="line">result = num1 ** <span class="number">0.5</span></span><br><span class="line">print(<span class="string">"&#123;&#125;开平方=&#123;&#125;"</span>.format(num1, result))</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><h6 id="求三角形面积"><a href="#求三角形面积" class="headerlink" title="求三角形面积"></a>求三角形面积</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = float(input(<span class="string">"输入边长："</span>))</span><br><span class="line">b = float(input(<span class="string">"输入边长："</span>))</span><br><span class="line">c = float(input(<span class="string">"输入边长："</span>))</span><br><span class="line">p = (a + b + c) / <span class="number">2</span></span><br><span class="line">s = (p * (p - a) * (p - b) * (p - c)) ** <span class="number">0.5</span></span><br><span class="line">print(<span class="string">"边长为&#123;&#125;，&#123;&#125;，&#123;&#125; 的三角形面积为&#123;&#125;"</span>.format(a, b, c, s))</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><h6 id="判断输入字符串是否为数字"><a href="#判断输入字符串是否为数字" class="headerlink" title="判断输入字符串是否为数字"></a>判断输入字符串是否为数字</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_number</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="string">"""判断输入字符串是否为数字"""</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        float(s)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">import</span> unicodedata</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            unicodedata.numeric(i)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">except</span> (ValueError, TypeError):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><h6 id="判断是否是奇数"><a href="#判断是否是奇数" class="headerlink" title="判断是否是奇数"></a>判断是否是奇数</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_odd</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="string">"""判断是否是奇数"""</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">if</span> float(n) % <span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">            print(<span class="string">"奇数"</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"偶数"</span>)</span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        print(<span class="string">"参数错误"</span>)</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li><h6 id="判断是否为闰年"><a href="#判断是否为闰年" class="headerlink" title="判断是否为闰年"></a>判断是否为闰年</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_leap_year</span><span class="params">(year)</span>:</span></span><br><span class="line">    <span class="string">"""判断是否为闰年"""</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        year = float(year)</span><br><span class="line">        <span class="keyword">if</span> year % <span class="number">4</span> == <span class="number">0</span> <span class="keyword">and</span> year % <span class="number">100</span> != <span class="number">0</span> <span class="keyword">or</span> year % <span class="number">400</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        print(<span class="string">"参数错误"</span>)</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li><h6 id="获取最大值"><a href="#获取最大值" class="headerlink" title="获取最大值"></a>获取最大值</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">max_num</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="string">"""获取最大值"""</span></span><br><span class="line">    <span class="keyword">return</span> max(s)</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li><h6 id="判断是否为质数"><a href="#判断是否为质数" class="headerlink" title="判断是否为质数"></a>判断是否为质数</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_prime</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="string">"""判断是否为质数"""</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        num = int(num)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, num):</span><br><span class="line">            <span class="keyword">if</span> num % i == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li><h6 id="输出指定范围内的质数"><a href="#输出指定范围内的质数" class="headerlink" title="输出指定范围内的质数"></a>输出指定范围内的质数</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scope_prime</span><span class="params">(min, max)</span>:</span></span><br><span class="line">    <span class="string">"""输出指定范围内的质数"""</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        min = int(min)</span><br><span class="line">        max = int(max)</span><br><span class="line">        prime = set()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(min, max + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">2</span>, i):</span><br><span class="line">                <span class="keyword">if</span> i % j == <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                prime.add(i)</span><br><span class="line">        <span class="keyword">return</span> prime</span><br><span class="line">    <span class="keyword">except</span> (TypeError, ValueError):</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li><h6 id="阶乘"><a href="#阶乘" class="headerlink" title="阶乘"></a>阶乘</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">factorial</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="string">"""阶乘"""</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        num = int(num)</span><br><span class="line">        <span class="keyword">if</span> num == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 递归实现</span></span><br><span class="line">            <span class="keyword">return</span> num * factorial(num - <span class="number">1</span>)</span><br><span class="line">            <span class="comment"># 非递归实现</span></span><br><span class="line">            <span class="comment"># factorial = 1</span></span><br><span class="line">            <span class="comment"># for i in range(1, num + 1):</span></span><br><span class="line">            <span class="comment">#     factorial *= i</span></span><br><span class="line">            <span class="comment"># return factorial</span></span><br><span class="line">    <span class="keyword">except</span>(TypeError, ValueError):</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<ol start="12">
+<li><h6 id="乘法表"><a href="#乘法表" class="headerlink" title="乘法表"></a>乘法表</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_multiplication</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""乘法表"""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, i + <span class="number">1</span>):</span><br><span class="line">            print(<span class="string">"&#123;&#125;x&#123;&#125;=&#123;&#125;\t"</span>.format(i, j, i * j), end=<span class="string">""</span>)</span><br><span class="line">        print()</span><br></pre></td></tr></table></figure>
+
+<ol start="13">
+<li><h6 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_fibonacci</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="string">"""斐波那契数列(0,1,1,2,3,5..)"""</span></span><br><span class="line">    fib_list = [<span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [<span class="number">0</span>, ]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n):</span><br><span class="line">        fib_list.append(fib_list[i - <span class="number">2</span>] + fib_list[i - <span class="number">1</span>])</span><br><span class="line">    <span class="keyword">return</span> fib_list</span><br></pre></td></tr></table></figure>
+
+<ol start="14">
+<li><h6 id="阿姆斯特朗数"><a href="#阿姆斯特朗数" class="headerlink" title="阿姆斯特朗数"></a>阿姆斯特朗数</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_armstrong</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="string">"""阿姆斯特朗数"""</span></span><br><span class="line">    a = []</span><br><span class="line">    b = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">        temp = i</span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        sum_num = <span class="number">0</span></span><br><span class="line">        a.clear()</span><br><span class="line">        <span class="keyword">while</span> int(temp % <span class="number">10</span>) != <span class="number">0</span> <span class="keyword">or</span> int(temp / <span class="number">10</span>) != <span class="number">0</span>:</span><br><span class="line">            a.append(int(temp % <span class="number">10</span>))</span><br><span class="line">            temp /= <span class="number">10</span></span><br><span class="line">            count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> iter(a):</span><br><span class="line">            sum_num += j ** count</span><br><span class="line">        <span class="keyword">if</span> sum_num == i:</span><br><span class="line">            b.append(i)</span><br><span class="line">    <span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
+
+<ol start="15">
+<li><h6 id="进制转"><a href="#进制转" class="headerlink" title="进制转"></a>进制转</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_type</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="comment"># 十进制转二进制</span></span><br><span class="line">    print(<span class="string">"二进制为：&#123;&#125;"</span>.format(bin(num)))</span><br><span class="line">    <span class="comment"># 十进制转八进制</span></span><br><span class="line">    print(<span class="string">"八进制为：&#123;&#125;"</span>.format(oct(num)))</span><br><span class="line">    <span class="comment"># 十进制转十六进制</span></span><br><span class="line">    print(<span class="string">"十六进制为：&#123;&#125;"</span>.format(hex(num)))</span><br><span class="line">    <span class="comment"># 字符转ASCII码</span></span><br><span class="line">    print(<span class="string">"ASCII码为：&#123;&#125;"</span>.format(ord(num)))</span><br><span class="line">    <span class="comment"># ASCII码转字符</span></span><br><span class="line">    print(<span class="string">"字符为：&#123;&#125;"</span>.format(chr(num)))</span><br></pre></td></tr></table></figure>
+
+<ol start="16">
+<li><h6 id="最大公约数"><a href="#最大公约数" class="headerlink" title="最大公约数"></a>最大公约数</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_max_divisor</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="string">"""最大公约数"""</span></span><br><span class="line">    <span class="keyword">if</span> x &gt; y:</span><br><span class="line">        x, y = y, x</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, x + <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> x % i == <span class="number">0</span> <span class="keyword">and</span> y % i == <span class="number">0</span>:</span><br><span class="line">            divisor = i</span><br><span class="line">    <span class="keyword">return</span> divisor</span><br></pre></td></tr></table></figure>
+
+<ol start="17">
+<li><h6 id="最小公倍数"><a href="#最小公倍数" class="headerlink" title="最小公倍数"></a>最小公倍数</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_min_multiple</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="string">"""最小公倍数"""</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; y:</span><br><span class="line">        x, y = y, x</span><br><span class="line">    multiple = y</span><br><span class="line">    <span class="keyword">while</span> multiple % x != <span class="number">0</span> <span class="keyword">or</span> multiple % y != <span class="number">0</span>:</span><br><span class="line">        multiple += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> multiple</span><br></pre></td></tr></table></figure>
+
+<ol start="18">
+<li><h6 id="日历"><a href="#日历" class="headerlink" title="日历"></a>日历</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_calendar</span><span class="params">(year, month)</span>:</span></span><br><span class="line">    <span class="string">"""日历"""</span></span><br><span class="line">    print(calendar.month(year, month))</span><br></pre></td></tr></table></figure>
+
+<ol start="19">
+<li><h6 id="递归-斐波那契数列"><a href="#递归-斐波那契数列" class="headerlink" title="递归 斐波那契数列"></a>递归 斐波那契数列</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">recur_fibo</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="string">"""递归 斐波那契数列"""</span></span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> recur_fibo(n - <span class="number">1</span>) + recur_fibo(n - <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="20">
+<li><h6 id="文件输入输出"><a href="#文件输入输出" class="headerlink" title="文件输入输出"></a>文件输入输出</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">file_test</span><span class="params">(file_name, my_input)</span>:</span></span><br><span class="line">    <span class="string">"""文件输入输出"""</span></span><br><span class="line">    <span class="keyword">with</span> open(file_name, <span class="string">'w+'</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(my_input)</span><br><span class="line">    <span class="keyword">with</span> open(file_name, <span class="string">'r'</span>) <span class="keyword">as</span> file:</span><br><span class="line">        output = file.read()</span><br><span class="line">        <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
+
+<ol start="21">
+<li><h6 id="字符串大小写转换"><a href="#字符串大小写转换" class="headerlink" title="字符串大小写转换"></a>字符串大小写转换</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">up2down_or_down2up</span><span class="params">(my_str)</span>:</span></span><br><span class="line">    <span class="string">"""字符串大小写转换"""</span></span><br><span class="line">    my_str = str(my_str)</span><br><span class="line">    print(my_str.upper())</span><br><span class="line">    print(my_str.lower())</span><br><span class="line">    print(my_str.title())</span><br><span class="line">    print(my_str.capitalize())</span><br></pre></td></tr></table></figure>
+
+<ol start="22">
+<li><h6 id="获得昨天日期"><a href="#获得昨天日期" class="headerlink" title="获得昨天日期"></a>获得昨天日期</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_yesterday</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""获得昨天日期"""</span></span><br><span class="line">    today = datetime.date.today()</span><br><span class="line">    one_day = datetime.timedelta(days=<span class="number">1</span>)</span><br><span class="line">    yesterday = today - one_day</span><br><span class="line">    <span class="keyword">return</span> yesterday</span><br></pre></td></tr></table></figure>
+
+<ol start="23">
+<li><h6 id="约瑟夫环"><a href="#约瑟夫环" class="headerlink" title="约瑟夫环"></a>约瑟夫环</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">joseph</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""约瑟夫环"""</span></span><br><span class="line">    people = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">30</span>):</span><br><span class="line">        <span class="comment"># 1,在船上，0,落水</span></span><br><span class="line">        people.append(<span class="number">1</span>)</span><br><span class="line">    <span class="comment"># 报数</span></span><br><span class="line">    check = <span class="number">0</span></span><br><span class="line">    <span class="comment"># 落水人数</span></span><br><span class="line">    num = <span class="number">0</span></span><br><span class="line">    <span class="comment"># 指针</span></span><br><span class="line">    index = <span class="number">-1</span></span><br><span class="line">    <span class="keyword">while</span> num &lt; <span class="number">15</span>:</span><br><span class="line">        <span class="comment"># 报数</span></span><br><span class="line">        check = check + <span class="number">1</span></span><br><span class="line">        index = index + <span class="number">1</span></span><br><span class="line">        index = index % <span class="number">30</span></span><br><span class="line">        <span class="keyword">while</span> people[index] == <span class="number">0</span>:</span><br><span class="line">            index = index + <span class="number">1</span></span><br><span class="line">            index = index % <span class="number">30</span></span><br><span class="line">        <span class="keyword">if</span> check == <span class="number">9</span>:</span><br><span class="line">            people[index] = <span class="number">0</span></span><br><span class="line">            print(<span class="string">'&#123;&#125;号下船'</span>.format(index + <span class="number">1</span>))</span><br><span class="line">            num = num + <span class="number">1</span></span><br><span class="line">            check = <span class="number">0</span></span><br><span class="line">    <span class="comment"># print(str(people))</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">joseph2</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""约瑟夫环"""</span></span><br><span class="line">    people = list(range(<span class="number">30</span>))</span><br><span class="line">    <span class="keyword">while</span> len(people) &gt; <span class="number">15</span>:</span><br><span class="line">        i = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; <span class="number">9</span>:</span><br><span class="line">            people.append(people.pop(<span class="number">0</span>))</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        print(<span class="string">'&#123;:2d&#125;号下船了'</span>.format(people.pop(<span class="number">0</span>)))</span><br></pre></td></tr></table></figure>
+
+<ol start="24">
+<li><h6 id="秒表功能实现"><a href="#秒表功能实现" class="headerlink" title="秒表功能实现"></a>秒表功能实现</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stopwatch</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""秒表功能实现"""</span></span><br><span class="line">    print(<span class="string">'按下回车开始计时，按下Ctrl+c停止计时'</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            input()</span><br><span class="line">            starttime = time.time()</span><br><span class="line">            print(<span class="string">'开始'</span>)</span><br><span class="line">            <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">                print(<span class="string">'计时：'</span>, round(time.time() - starttime, <span class="number">0</span>), <span class="string">'秒'</span>, end=<span class="string">'\r'</span>)</span><br><span class="line">                time.sleep(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">            print(<span class="string">'结束'</span>)</span><br><span class="line">            endtime = time.time()</span><br><span class="line">            print(<span class="string">'总共的时间为：'</span>, round(endtime - starttime, <span class="number">2</span>), <span class="string">'secs'</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<ol start="25">
+<li><h6 id="计算n个自然数的立方和"><a href="#计算n个自然数的立方和" class="headerlink" title="计算n个自然数的立方和"></a>计算n个自然数的立方和</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cube_sum</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="string">"""计算n个自然数的立方和"""</span></span><br><span class="line">    <span class="keyword">return</span> sum([num ** <span class="number">3</span> <span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>)])</span><br></pre></td></tr></table></figure>
+
+<ol start="26">
+<li><h6 id="数组翻转指定个数元素"><a href="#数组翻转指定个数元素" class="headerlink" title="数组翻转指定个数元素"></a>数组翻转指定个数元素</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">list_flip</span><span class="params">(arr, n)</span>:</span></span><br><span class="line">    <span class="string">"""数组翻转指定个数元素"""</span></span><br><span class="line">    arr = list(arr)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        arr.append(arr.pop(<span class="number">0</span>))</span><br><span class="line">    <span class="keyword">return</span> arr</span><br></pre></td></tr></table></figure>
+
+<ol start="27">
+<li><h6 id="数组首尾对调"><a href="#数组首尾对调" class="headerlink" title="数组首尾对调"></a>数组首尾对调</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">list_exchange</span><span class="params">(arr)</span>:</span></span><br><span class="line">    <span class="string">"""数组首尾对调"""</span></span><br><span class="line">    arr[<span class="number">0</span>], arr[len(arr) - <span class="number">1</span>] = arr[len(arr) - <span class="number">1</span>], arr[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> arr</span><br></pre></td></tr></table></figure>
+
+<ol start="28">
+<li><h6 id="指定位置对调"><a href="#指定位置对调" class="headerlink" title="指定位置对调"></a>指定位置对调</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">list_exchange</span><span class="params">(arr, x, y)</span>:</span></span><br><span class="line">    <span class="comment"># 数组指定位置对调</span></span><br><span class="line">    arr[x], arr[y] = arr[y], arr[x]</span><br><span class="line">    <span class="comment"># 判断数组中是否有3</span></span><br><span class="line">    <span class="keyword">if</span> <span class="number">3</span> <span class="keyword">in</span> arr:</span><br><span class="line">        print(<span class="string">"数组中包含3"</span>)</span><br><span class="line">    <span class="comment"># 计算数组中元素出现的次数</span></span><br><span class="line">    print(<span class="string">'数组中元素2出现了：&#123;&#125;次'</span>.format(arr.count(<span class="number">2</span>)))</span><br><span class="line">    <span class="comment"># 翻转数组</span></span><br><span class="line">    <span class="keyword">return</span> [ele <span class="keyword">for</span> ele <span class="keyword">in</span> reversed(arr)]</span><br></pre></td></tr></table></figure>
+
+<ol start="29">
+<li><h6 id="正则表达式获取字符串中的url"><a href="#正则表达式获取字符串中的url" class="headerlink" title="正则表达式获取字符串中的url"></a>正则表达式获取字符串中的url</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_url</span><span class="params">(str)</span>:</span></span><br><span class="line">    <span class="string">"""正则表达式获取字符串中的url"""</span></span><br><span class="line">    exp = <span class="string">r'https?://(?:[-\w.]|(?:%[\da-fA-F]&#123;2&#125;))+'</span></span><br><span class="line">    url = re.findall(exp, str)</span><br><span class="line">    <span class="keyword">return</span> url</span><br></pre></td></tr></table></figure>
+
+<ol start="30">
+<li><h6 id="按key-value排序"><a href="#按key-value排序" class="headerlink" title="按key/value排序"></a>按key/value排序</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sort_dic</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""按key/value排序"""</span></span><br><span class="line">    key_value = &#123;<span class="number">2</span>: <span class="number">56</span>, <span class="number">1</span>: <span class="number">2</span>, <span class="number">5</span>: <span class="number">12</span>, <span class="number">4</span>: <span class="number">24</span>, <span class="number">6</span>: <span class="number">18</span>, <span class="number">3</span>: <span class="number">323</span>&#125;</span><br><span class="line">    key_value2 = &#123;<span class="number">7</span>: <span class="number">23</span>, <span class="number">8</span>: <span class="number">54</span>&#125;</span><br><span class="line">    print(<span class="string">"按key排序"</span>)</span><br><span class="line">    print(sorted(key_value.items()))</span><br><span class="line">    <span class="comment"># for i in sorted(key_value):</span></span><br><span class="line">    <span class="comment">#     print((i, key_value[i]), end=' ')</span></span><br><span class="line">    print(<span class="string">"\n按value排序"</span>)</span><br><span class="line">    print(sorted(key_value.items(), key=<span class="keyword">lambda</span> kv: (kv[<span class="number">1</span>], kv[<span class="number">0</span>])))</span><br><span class="line">    print(<span class="string">"字典值之和为：&#123;&#125;"</span>.format(sum(key_value.values())))</span><br><span class="line">    <span class="comment"># 将字典2加入字典1</span></span><br><span class="line">    key_value.update(key_value2)</span><br><span class="line">    print(<span class="string">"两字典合并,key_value:&#123;&#125;, key_value2:&#123;&#125;"</span>.format(key_value, key_value2))</span><br></pre></td></tr></table></figure>
+
+<ol start="31">
+<li><h6 id="时间转换"><a href="#时间转换" class="headerlink" title="时间转换"></a>时间转换</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a1 = <span class="string">"2019-7-20 23:40:00"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 先转换为时间数组</span></span><br><span class="line">timeArray = time.strptime(a1, <span class="string">"%Y-%m-%d %H:%M:%S"</span>)</span><br><span class="line"><span class="comment"># 转换为时间戳</span></span><br><span class="line">timeStamp = int(time.mktime(timeArray))</span><br><span class="line">print(timeStamp)</span><br><span class="line"><span class="comment"># 格式转换 - 转为 /</span></span><br><span class="line">otherStyleTime = time.strftime(<span class="string">"%Y/%m/%d %H:%M:%S"</span>, timeArray)</span><br><span class="line">print(otherStyleTime)</span><br><span class="line">print(<span class="string">"now:&#123;&#125;"</span>.format(datetime.datetime.now()))</span><br></pre></td></tr></table></figure>
+
+<ol start="32">
+<li><h6 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search</span><span class="params">(arr, x)</span>:</span></span><br><span class="line">    <span class="string">"""二分查找,在有序数组arr中查找x所在的索引，找不到时返回-1"""</span></span><br><span class="line">    left, right = <span class="number">0</span>, len(arr) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> right - left == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span> arr[right] == x:</span><br><span class="line">                <span class="keyword">return</span> right</span><br><span class="line">            <span class="keyword">elif</span> arr[left] == x:</span><br><span class="line">                <span class="keyword">return</span> left</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            mid = int((right + left) / <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">if</span> x == arr[mid]:</span><br><span class="line">                <span class="keyword">return</span> mid</span><br><span class="line">            <span class="keyword">elif</span> x &gt; arr[mid]:</span><br><span class="line">                left = mid</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">elif</span> x &lt; arr[mid]:</span><br><span class="line">                right = mid</span><br><span class="line">                <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+
+<ol start="33">
+<li><h6 id="线性查找"><a href="#线性查找" class="headerlink" title="线性查找"></a>线性查找</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_search</span><span class="params">(arr, c)</span>:</span></span><br><span class="line">    <span class="string">"""线性查找"""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr)):</span><br><span class="line">        <span class="keyword">if</span> arr[i] == c:</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+
+<ol start="34">
+<li><h6 id="打印杨辉三角"><a href="#打印杨辉三角" class="headerlink" title="打印杨辉三角"></a>打印杨辉三角</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pascal_triangles</span><span class="params">(n)</span>:</span></span><br><span class="line">    triangles = &#123;&#125;</span><br><span class="line">    n += <span class="number">1</span></span><br><span class="line">    <span class="string">"""杨辉三角"""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, i + <span class="number">1</span>):</span><br><span class="line">            ij = str(i) + str(j)</span><br><span class="line">            <span class="keyword">if</span> j == <span class="number">1</span>:</span><br><span class="line">                triangles[ij] = <span class="number">1</span></span><br><span class="line">                print(<span class="string">" "</span> * (n - i - <span class="number">1</span>), end=<span class="string">''</span>)</span><br><span class="line">                print(<span class="number">1</span>, end=<span class="string">''</span>)</span><br><span class="line">            <span class="keyword">elif</span> j == i:</span><br><span class="line">                triangles[ij] = <span class="number">1</span></span><br><span class="line">                print(<span class="number">1</span>, end=<span class="string">''</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ul = str(i - <span class="number">1</span>) + str(j - <span class="number">1</span>)</span><br><span class="line">                ur = str(i - <span class="number">1</span>) + str(j)</span><br><span class="line">                triangles[ij] = triangles[ul] + triangles[ur]</span><br><span class="line">                print(triangles[ij], end=<span class="string">''</span>)</span><br><span class="line">            print(<span class="string">" "</span>, end=<span class="string">''</span>)</span><br><span class="line">        print()</span><br><span class="line">    <span class="keyword">return</span> triangles</span><br></pre></td></tr></table></figure>
+
+<ol start="35">
+<li><h6 id="白鸡百钱"><a href="#白鸡百钱" class="headerlink" title="白鸡百钱"></a>白鸡百钱</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">chicken_question</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""百鸡百钱"""</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    鸡翁一值钱五，鸡母一值钱三，鸡雏三值钱一。百钱买百鸡，问鸡翁、鸡母、鸡雏各几何？</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">101</span>):</span><br><span class="line">        <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">101</span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="number">5</span> * x + <span class="number">3</span> * y + (<span class="number">100</span> - x - y) / <span class="number">3</span> == <span class="number">100</span>:</span><br><span class="line">                print(<span class="string">"鸡翁：&#123;&#125;、鸡母：&#123;&#125;、鸡雏：&#123;&#125;"</span>.format(x, y, <span class="number">100</span> - x - y))</span><br></pre></td></tr></table></figure>
+
+<ol start="36">
+<li><h6 id="完全数"><a href="#完全数" class="headerlink" title="完全数"></a>完全数</h6></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">perfect_number</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="string">"""完全数"""</span></span><br><span class="line">    temp = []</span><br><span class="line">    perfect = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, i):</span><br><span class="line">            <span class="keyword">if</span> i % j == <span class="number">0</span> <span class="keyword">and</span> i != j:</span><br><span class="line">                temp.append(j)</span><br><span class="line">        <span class="keyword">if</span> sum(temp) == i:</span><br><span class="line">            perfect.append(i)</span><br><span class="line">        temp.clear()</span><br><span class="line">    <span class="keyword">return</span> perfect</span><br></pre></td></tr></table></figure>
+
+<h5 id="小游戏"><a href="#小游戏" class="headerlink" title="小游戏"></a>小游戏</h5><h6 id="Craps赌博游戏"><a href="#Craps赌博游戏" class="headerlink" title="Craps赌博游戏"></a>Craps赌博游戏</h6><p>玩家摇两颗色子 如果第一次摇出7点或11点 玩家胜<br>如果摇出2点 3点 12点 庄家胜 其他情况游戏继续<br>玩家再次要色子 如果摇出7点 庄家胜<br>如果摇出第一次摇的点数 玩家胜<br>否则游戏继续 玩家继续摇色子<br>玩家进入游戏时有1000元的赌注 全部输光游戏结束</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">money = <span class="number">1000</span></span><br><span class="line"><span class="keyword">while</span> money &gt; <span class="number">0</span>:</span><br><span class="line">    bet = int(input(<span class="string">"请下注："</span>))</span><br><span class="line">    <span class="keyword">while</span> bet &gt; money <span class="keyword">or</span> bet &lt;= <span class="number">0</span>:</span><br><span class="line">        bet = int(input(<span class="string">"请重新下注："</span>))</span><br><span class="line">    money -= bet</span><br><span class="line">    first_num = random.randint(<span class="number">2</span>, <span class="number">12</span>)</span><br><span class="line">    print(<span class="string">"第一次：&#123;&#125;"</span>.format(first_num))</span><br><span class="line">    <span class="keyword">if</span> first_num <span class="keyword">in</span> [<span class="number">7</span>, <span class="number">11</span>]:</span><br><span class="line">        money += bet * <span class="number">2</span></span><br><span class="line">        print(<span class="string">"1.玩家胜出,获得：&#123;&#125;，剩余金币：【&#123;&#125;】"</span>.format(bet * <span class="number">2</span>, money))</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">elif</span> first_num <span class="keyword">in</span> [<span class="number">2</span>, <span class="number">3</span>, <span class="number">12</span>]:</span><br><span class="line">        print(<span class="string">"2.庄家胜出，重新开始，剩余金币：【&#123;&#125;】"</span>.format(money))</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            next_num = random.randint(<span class="number">2</span>, <span class="number">12</span>)</span><br><span class="line">            print(<span class="string">"这一次：&#123;&#125;"</span>.format(next_num))</span><br><span class="line">            <span class="keyword">if</span> next_num == <span class="number">7</span>:</span><br><span class="line">                print(<span class="string">"3.庄家胜出，重新开始，剩余金币：【&#123;&#125;】"</span>.format(money))</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">elif</span> next_num == first_num:</span><br><span class="line">                money += bet * <span class="number">2</span></span><br><span class="line">                print(<span class="string">"4.玩家胜出,获得：&#123;&#125;，剩余金币：【&#123;&#125;】"</span>.format(bet * <span class="number">2</span>, money))</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="comment"># input()</span></span><br><span class="line">print(<span class="string">"金币为零，游戏结束"</span>)</span><br></pre></td></tr></table></figure>
+
+<h6 id="21点"><a href="#21点" class="headerlink" title="21点"></a>21点</h6><p>基于<a href="https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/09.%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6.md#%E6%A1%88%E4%BE%8B2%E6%89%91%E5%85%8B%E6%B8%B8%E6%88%8F" target="_blank" rel="noopener">Python-100-Days的扑克游戏</a>编写</p>
+<p>游戏规则（简化版）：</p>
+<p>​        开局时，庄家给每个玩家（又称闲家）牌面向上发两张牌（明牌），再给庄家自己发两张牌，一张明牌，一张暗牌（牌面朝下）。<br>​        当所有的初始牌分发完毕后，如果玩家拿到的是A和T（无论顺序），就拥有黑杰克（Black Jack）；若庄家的明牌为T，且暗牌为A，应直接翻开并拥有Black Jack；如果庄家没有Black Jack则保持暗牌，玩家继续游戏。若玩家为Black Jack且庄家为其他，玩家赢得1.5倍（或2倍，1赔2时）赌注；若庄家为Black Jack且玩家为其他，庄家赢得赌注；若庄家和玩家均为Black Jack，平局，玩家拿回自己的赌注。<br>​        接下来是正常的拿牌流程：首名非黑杰克玩家选择拿牌（Hit）、停牌（Stand）、加倍（Double）或投降（Surrender，庄家赢得一半赌注）；若选择拿牌，则后续只能选择拿牌或停牌。在发牌的过程中，如果玩家的牌点数的和超过21，玩家就输了——叫爆掉（Bust），庄家赢得赌注（无论庄家之后的点数是多少）。假如玩家没爆掉，又决定不再要牌了（停牌，或因加倍、投降而终止），则轮到下一名非黑杰克玩家选择。<br>​        当所有玩家停止拿牌后，庄家翻开暗牌，并持续拿牌直至点数不小于17（若有A，按最大而尽量不爆计算）。假如庄家爆掉了，那他就输了，玩家赢得1倍赌注；否则那么比点数大小，大为赢。点数相同为平局，玩家拿回自己的赌注。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Card</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""一张牌"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, suite, face)</span>:</span></span><br><span class="line">        self._suite = suite</span><br><span class="line">        self._face = face</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">face</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._face</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">suite</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._suite</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self._face == <span class="number">1</span>:</span><br><span class="line">            face_str = <span class="string">'A'</span></span><br><span class="line">        <span class="keyword">elif</span> self._face == <span class="number">11</span>:</span><br><span class="line">            face_str = <span class="string">'J'</span></span><br><span class="line">        <span class="keyword">elif</span> self._face == <span class="number">12</span>:</span><br><span class="line">            face_str = <span class="string">'Q'</span></span><br><span class="line">        <span class="keyword">elif</span> self._face == <span class="number">13</span>:</span><br><span class="line">            face_str = <span class="string">'K'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            face_str = str(self._face)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'%s%s'</span> % (self._suite, face_str)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__str__()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Poker</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""一副牌"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self._cards = [Card(suite, face)</span><br><span class="line">                       <span class="keyword">for</span> suite <span class="keyword">in</span> <span class="string">'♠♥♣♦'</span></span><br><span class="line">                       <span class="keyword">for</span> face <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">14</span>)]</span><br><span class="line">        self._current = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cards</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._cards</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">shuffle</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""洗牌(随机乱序)"""</span></span><br><span class="line">        self._current = <span class="number">0</span></span><br><span class="line">        random.shuffle(self._cards)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">next</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""发牌"""</span></span><br><span class="line">        card = self._cards[self._current]</span><br><span class="line">        self._current += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> card</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">has_next</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""还有没有牌"""</span></span><br><span class="line">        <span class="keyword">return</span> self._current &lt; len(self._cards)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Player</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""玩家"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self._name = name</span><br><span class="line">        self._cards_on_hand = []</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cards_on_hand</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._cards_on_hand</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, card)</span>:</span></span><br><span class="line">        <span class="string">"""摸牌"""</span></span><br><span class="line">        self._cards_on_hand.append(card)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">arrange</span><span class="params">(self, card_key)</span>:</span></span><br><span class="line">        <span class="string">"""玩家整理手上的牌"""</span></span><br><span class="line">        self._cards_on_hand.sort(key=card_key)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 排序规则-先根据花色再根据点数排序</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Black_Jack</span><span class="params">(Player)</span>:</span></span><br><span class="line">    <span class="string">"""21点"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        super().__init__(name)</span><br><span class="line">        <span class="comment"># 停牌</span></span><br><span class="line">        self._stand = <span class="literal">False</span></span><br><span class="line">        <span class="comment"># 爆掉</span></span><br><span class="line">        self._bust = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">stand</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._stand</span><br><span class="line"></span><br><span class="line"><span class="meta">    @stand.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">stand</span><span class="params">(self, state)</span>:</span></span><br><span class="line">        <span class="string">"""停牌"""</span></span><br><span class="line">        self._stand = state</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bust</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._bust</span><br><span class="line"></span><br><span class="line"><span class="meta">    @bust.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bust</span><span class="params">(self, state)</span>:</span></span><br><span class="line">        <span class="string">"""爆掉"""</span></span><br><span class="line">        self._bust = state</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_stand</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""是否停牌"""</span></span><br><span class="line">        <span class="keyword">return</span> self.black_jack_total() == <span class="number">21</span> <span class="keyword">or</span> self.face_total() &gt;= <span class="number">17</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_bust</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""是否爆掉"""</span></span><br><span class="line">        <span class="keyword">return</span> self.face_total() &gt; <span class="number">21</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open_hand</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        <span class="string">"""明牌"""</span></span><br><span class="line">        <span class="keyword">return</span> self.cards_on_hand[i]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clean_hand</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""清空手牌并清空状态"""</span></span><br><span class="line">        self.cards_on_hand.clear()</span><br><span class="line">        self.stand = <span class="literal">False</span></span><br><span class="line">        self.bust = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">face_total</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""手牌总点数"""</span></span><br><span class="line">        temp = [card.face <span class="keyword">for</span> card <span class="keyword">in</span> self.cards_on_hand]</span><br><span class="line">        j_count = temp.count(<span class="number">11</span>)</span><br><span class="line">        q_count = temp.count(<span class="number">12</span>)</span><br><span class="line">        k_count = temp.count(<span class="number">13</span>)</span><br><span class="line">        total = sum(temp) - j_count - q_count * <span class="number">2</span> - k_count * <span class="number">3</span></span><br><span class="line">        <span class="keyword">return</span> total</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">black_jack_total</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""21点计数"""</span></span><br><span class="line">        temp = [card.face <span class="keyword">for</span> card <span class="keyword">in</span> self.cards_on_hand]</span><br><span class="line">        a_count = temp.count(<span class="number">1</span>)</span><br><span class="line">        j_count = temp.count(<span class="number">11</span>)</span><br><span class="line">        q_count = temp.count(<span class="number">12</span>)</span><br><span class="line">        k_count = temp.count(<span class="number">13</span>)</span><br><span class="line">        total = sum(temp) - j_count - q_count * <span class="number">2</span> - k_count * <span class="number">3</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(a_count):</span><br><span class="line">            <span class="keyword">if</span> total &lt; <span class="number">21</span>:</span><br><span class="line">                total += <span class="number">10</span></span><br><span class="line">                <span class="keyword">if</span> total &gt; <span class="number">21</span>:</span><br><span class="line">                    total -= <span class="number">10</span></span><br><span class="line">        <span class="keyword">return</span> total</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Black_Jack_Player</span><span class="params">(Black_Jack)</span>:</span></span><br><span class="line">    <span class="string">"""21点玩家"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        super().__init__(name)</span><br><span class="line">        <span class="comment"># 玩家初始赌注</span></span><br><span class="line">        self._money = <span class="number">1000</span></span><br><span class="line">        <span class="comment"># 下注额</span></span><br><span class="line">        self._bet = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">money</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._money</span><br><span class="line"></span><br><span class="line"><span class="meta">    @money.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">money</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        <span class="string">"""下注"""</span></span><br><span class="line">        self._money = money</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bet</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._bet</span><br><span class="line"></span><br><span class="line"><span class="meta">    @bet.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bet</span><span class="params">(self, bet)</span>:</span></span><br><span class="line">        <span class="string">"""下注"""</span></span><br><span class="line">        self._bet = bet</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">double</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""加倍"""</span></span><br><span class="line">        self._bet *= <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">surrender</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""投降"""</span></span><br><span class="line">        self._bet /= <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"【%s】筹码:%d，点数:%d，牌面:%s"</span> % (</span><br><span class="line">            self._name, self._money, self.black_jack_total(), self.cards_on_hand)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Banker</span><span class="params">(Black_Jack)</span>:</span></span><br><span class="line">    <span class="string">"""庄家"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        super().__init__(name)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 是否是黑杰克</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_black_jack</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.cards_on_hand[<span class="number">0</span>].face <span class="keyword">in</span> [<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>] <span class="keyword">and</span> self.cards_on_hand[<span class="number">1</span>].face == <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"【%s】点数:%d，牌面:%s"</span> % (self._name, self.black_jack_total(), self.cards_on_hand)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_key</span><span class="params">(card)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> card.suite, card.face</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    p = Poker()</span><br><span class="line">    <span class="comment"># print(p.cards)</span></span><br><span class="line">    banker = Banker(<span class="string">'庄家'</span>)</span><br><span class="line">    <span class="comment"># 电脑玩家</span></span><br><span class="line">    com_players = [Black_Jack_Player(<span class="string">'东邪'</span>), Black_Jack_Player(<span class="string">'西毒'</span>), Black_Jack_Player(<span class="string">'南帝'</span>),</span><br><span class="line">                   Black_Jack_Player(<span class="string">'北丐'</span>)]</span><br><span class="line">    player = Black_Jack_Player(<span class="string">'玩家'</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># 洗牌</span></span><br><span class="line">        p.shuffle()</span><br><span class="line">        <span class="comment"># 下注</span></span><br><span class="line">        <span class="keyword">for</span> com_player <span class="keyword">in</span> com_players:</span><br><span class="line">            com_player.bet = random.randint(<span class="number">1</span>, com_player.money)</span><br><span class="line">            print(<span class="string">"【&#123;&#125;】下注：&#123;&#125;"</span>.format(com_player.name, com_player.bet))</span><br><span class="line">        print(<span class="string">'玩家当前筹码：&#123;&#125;'</span>.format(player.money))</span><br><span class="line"></span><br><span class="line">        ok = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">not</span> ok:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                player.bet = int(input(<span class="string">"玩家请下注："</span>))</span><br><span class="line">                <span class="keyword">if</span> player.bet &gt; player.money:</span><br><span class="line">                    <span class="keyword">raise</span> ValueError</span><br><span class="line">                ok = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">except</span> ValueError:</span><br><span class="line">                <span class="comment"># 下注异常</span></span><br><span class="line">                print(<span class="string">'输入有误'</span>)</span><br><span class="line">                ok = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>):</span><br><span class="line">            <span class="comment"># 庄家拿牌</span></span><br><span class="line">            banker.get(p.next)</span><br><span class="line">            <span class="comment"># 玩家拿牌</span></span><br><span class="line">            player.get(p.next)</span><br><span class="line">            print(<span class="string">'玩家拿牌：&#123;&#125;'</span>.format(player.cards_on_hand[i]))</span><br><span class="line">            <span class="comment"># 电脑拿牌</span></span><br><span class="line">            <span class="keyword">for</span> com_player <span class="keyword">in</span> com_players:</span><br><span class="line">                com_player.get(p.next)</span><br><span class="line">        <span class="comment"># 本轮是否结束标志</span></span><br><span class="line">        END = <span class="literal">False</span></span><br><span class="line">        <span class="comment"># 庄家明牌</span></span><br><span class="line">        print(<span class="string">"庄家明牌为：&#123;&#125;"</span>.format(banker.open_hand(<span class="number">0</span>)))</span><br><span class="line">        <span class="keyword">if</span> banker.is_black_jack():</span><br><span class="line">            print(<span class="string">"\n庄家有Black Jack：&#123;&#125;"</span>.format(banker.cards_on_hand))</span><br><span class="line">            <span class="comment"># 庄家停牌</span></span><br><span class="line">            banker.stand = <span class="literal">True</span></span><br><span class="line">            <span class="comment"># 直接结算筹码，结束本轮</span></span><br><span class="line">            END = <span class="literal">True</span></span><br><span class="line">        <span class="comment"># 玩家轮流拿牌/停牌</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">not</span> END:</span><br><span class="line">            <span class="keyword">for</span> com_player <span class="keyword">in</span> com_players:</span><br><span class="line">                <span class="comment"># 如果电脑玩家没停牌和爆掉则拿牌</span></span><br><span class="line">                <span class="comment"># print('抽牌前：&#123;&#125;, stand:&#123;&#125;, bust:&#123;&#125;'.format(com_player.name, com_player.stand, com_player.bust))</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> com_player.stand <span class="keyword">and</span> <span class="keyword">not</span> com_player.bust:</span><br><span class="line">                    <span class="keyword">if</span> com_player.is_stand():</span><br><span class="line">                        com_player.stand = <span class="literal">True</span></span><br><span class="line">                        print(<span class="string">"【&#123;&#125;】:\"停牌！\""</span>.format(com_player.name))</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="comment"># 局势不错选择翻倍</span></span><br><span class="line">                        <span class="keyword">if</span> com_player.face_total <span class="keyword">in</span> [<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>] <span class="keyword">and</span> com_player.money &gt;= com_player.bet * <span class="number">2</span>:</span><br><span class="line">                            com_player.double()</span><br><span class="line">                            print(<span class="string">"【&#123;&#125;】:\"运气不错，加倍！\""</span>.format(com_player.name))</span><br><span class="line">                        print(<span class="string">"【&#123;&#125;】拿牌"</span>.format(com_player.name))</span><br><span class="line">                        com_player.get(p.next)</span><br><span class="line">                        <span class="keyword">if</span> com_player.is_bust():</span><br><span class="line">                            com_player.bust = <span class="literal">True</span></span><br><span class="line">                            print(<span class="string">"【&#123;&#125;】爆掉！！"</span>.format(com_player.name))</span><br><span class="line">                    <span class="comment"># elif com_player.is_stand():</span></span><br><span class="line">                    <span class="comment">#     com_player.stand = True</span></span><br><span class="line">                    <span class="comment">#     print("【&#123;&#125;】:\"停牌！\"".format(com_player.name))</span></span><br><span class="line">                    <span class="comment"># print('抽牌后：&#123;&#125;, stand:&#123;&#125;, bust:&#123;&#125;'.format(com_player.name, com_player.stand, com_player.bust))</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> player.bust <span class="keyword">and</span> <span class="keyword">not</span> player.stand:</span><br><span class="line">                <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">                    print(<span class="string">"当前手牌:&#123;&#125;，庄家明牌为：&#123;&#125;"</span>.format(player.cards_on_hand, banker.cards_on_hand[<span class="number">0</span>]))</span><br><span class="line">                    print(<span class="string">"请选择:1.拿牌，2.停牌，3.加倍"</span>)</span><br><span class="line">                    choose = int(input(<span class="string">"选择:"</span>))</span><br><span class="line">                    <span class="keyword">if</span> choose == <span class="number">1</span> <span class="keyword">or</span> choose == <span class="number">3</span>:</span><br><span class="line">                        <span class="keyword">if</span> choose == <span class="number">3</span> <span class="keyword">and</span> player.money &gt;= player.bet * <span class="number">2</span>:</span><br><span class="line">                            player.double()</span><br><span class="line">                        <span class="keyword">elif</span> choose == <span class="number">3</span>:</span><br><span class="line">                            print(<span class="string">'筹码不足，无法加倍！'</span>)</span><br><span class="line">                        player.get(p.next)</span><br><span class="line">                        <span class="keyword">if</span> player.is_bust():</span><br><span class="line">                            player.bust = <span class="literal">True</span></span><br><span class="line">                        print(<span class="string">'庄家发牌，当前手牌：&#123;&#125;'</span>.format(player.cards_on_hand))</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="keyword">elif</span> choose == <span class="number">2</span>:</span><br><span class="line">                        player.stand = <span class="literal">True</span></span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="comment"># 投降</span></span><br><span class="line">                    <span class="comment"># elif choose == 4:</span></span><br><span class="line">                    <span class="comment">#     player.surrender()</span></span><br><span class="line">                    <span class="comment">#     player.stand = True</span></span><br><span class="line">                    <span class="comment">#     break</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        print(<span class="string">"选择错误，请重新选择"</span>)</span><br><span class="line">            temp = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> com_player <span class="keyword">in</span> com_players:</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> com_player.stand <span class="keyword">or</span> com_player.bust:</span><br><span class="line">                    temp += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> temp == len(com_players) <span class="keyword">and</span> (player.bust <span class="keyword">or</span> player.stand):</span><br><span class="line">                END = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 庄家抽牌</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">not</span> banker.bust <span class="keyword">and</span> <span class="keyword">not</span> banker.stand:</span><br><span class="line">            banker.get(p.next)</span><br><span class="line">            <span class="keyword">if</span> banker.is_bust():</span><br><span class="line">                banker.bust = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">elif</span> banker.is_stand():</span><br><span class="line">                banker.stand = <span class="literal">True</span></span><br><span class="line">        <span class="comment"># 结算筹码</span></span><br><span class="line">        <span class="keyword">if</span> banker.bust:</span><br><span class="line">            <span class="keyword">for</span> com_player <span class="keyword">in</span> com_players:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> com_player.bust:</span><br><span class="line">                    com_player.money += com_player.bet</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    com_player.money -= com_player.bet</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> player.bust:</span><br><span class="line">                player.money += player.bet</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                player.money -= player.bet</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">for</span> com_player <span class="keyword">in</span> com_players:</span><br><span class="line">                <span class="keyword">if</span> com_player.black_jack_total() &gt; banker.black_jack_total() <span class="keyword">and</span> <span class="keyword">not</span> com_player.bust:</span><br><span class="line">                    <span class="comment"># 玩家为21点时赢得1.5倍赌注</span></span><br><span class="line">                    <span class="keyword">if</span> com_player.black_jack_total() == <span class="number">21</span>:</span><br><span class="line">                        com_player.bet *= <span class="number">1.5</span></span><br><span class="line">                    com_player.money += com_player.bet</span><br><span class="line">                <span class="keyword">elif</span> com_player.black_jack_total() == banker.black_jack_total() <span class="keyword">and</span> <span class="keyword">not</span> com_player.bust:</span><br><span class="line">                    <span class="keyword">pass</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    com_player.money -= com_player.bet</span><br><span class="line">            <span class="keyword">if</span> player.black_jack_total() &gt; banker.black_jack_total() <span class="keyword">and</span> <span class="keyword">not</span> player.bust:</span><br><span class="line">                <span class="comment"># 玩家为21点时赢得1.5倍赌注</span></span><br><span class="line">                <span class="keyword">if</span> player.black_jack_total() == <span class="number">21</span>:</span><br><span class="line">                    player.bet *= <span class="number">1.5</span></span><br><span class="line">                player.money += player.bet</span><br><span class="line">            <span class="keyword">elif</span> player.black_jack_total() == banker.black_jack_total() <span class="keyword">and</span> <span class="keyword">not</span> player.bust:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                player.money -= player.bet</span><br><span class="line">        <span class="comment"># 结束一轮</span></span><br><span class="line">        print(<span class="string">"="</span> * <span class="number">45</span>)</span><br><span class="line">        print(banker)</span><br><span class="line">        banker.clean_hand()</span><br><span class="line">        <span class="keyword">for</span> com_player <span class="keyword">in</span> com_players:</span><br><span class="line">            <span class="comment"># 清空手牌</span></span><br><span class="line">            print(com_player, end=<span class="string">''</span>)</span><br><span class="line">            com_player.clean_hand()</span><br><span class="line">            <span class="comment"># 筹码为零则离席</span></span><br><span class="line">            <span class="keyword">if</span> com_player.money == <span class="number">0</span>:</span><br><span class="line">                com_players.remove(com_player)</span><br><span class="line">                print(<span class="string">"\n【&#123;&#125;】倾家荡产,被保安拖走..."</span>.format(com_player.name))</span><br><span class="line">            print()</span><br><span class="line">        print(player)</span><br><span class="line">        player.clean_hand()</span><br><span class="line">        print(<span class="string">"="</span> * <span class="number">45</span>)</span><br><span class="line">        input(<span class="string">"本轮结束，请按回车继续"</span>)</span><br><span class="line">        <span class="keyword">if</span> player.money &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    print(<span class="string">"筹码已用完，游戏结束！！"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Shaoyong</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="http://www.shaoyong.online/posts/50958/" title="Python 3 实例">http://www.shaoyong.online/posts/50958/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/实例/" rel="tag"># 实例</a>
+          
+            <a href="/tags/练习/" rel="tag"># 练习</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+              <div id="needsharebutton-postbottom">
+                <span class="btn">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </span>
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/27055/" rel="next" title="面试题">
+                <i class="fa fa-chevron-left"></i> 面试题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/59966/" rel="prev" title="Python 3 实现常见排序算法">
+                Python 3 实现常见排序算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTQ1NC8yMTk2Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="http://imagebed.shaoyong.online/images/info/avatar_morty.jpg" alt="Shaoyong">
+  
+  <p class="site-author-name" itemprop="name">Shaoyong</p>
+  <div class="site-description motion-element" itemprop="description">博客在建中...</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+
+
+
+
+  <div class="cc-license motion-element" itemprop="license">
+  
+  
+    
+  
+  
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#摄氏度转华氏度"><span class="nav-number">1.</span> <span class="nav-text">摄氏度转华氏度</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#求园的面积"><span class="nav-number">2.</span> <span class="nav-text">求园的面积</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#开平方根"><span class="nav-number">3.</span> <span class="nav-text">开平方根</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#求三角形面积"><span class="nav-number">4.</span> <span class="nav-text">求三角形面积</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#判断输入字符串是否为数字"><span class="nav-number">5.</span> <span class="nav-text">判断输入字符串是否为数字</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#判断是否是奇数"><span class="nav-number">6.</span> <span class="nav-text">判断是否是奇数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#判断是否为闰年"><span class="nav-number">7.</span> <span class="nav-text">判断是否为闰年</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取最大值"><span class="nav-number">8.</span> <span class="nav-text">获取最大值</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#判断是否为质数"><span class="nav-number">9.</span> <span class="nav-text">判断是否为质数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#输出指定范围内的质数"><span class="nav-number">10.</span> <span class="nav-text">输出指定范围内的质数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#阶乘"><span class="nav-number">11.</span> <span class="nav-text">阶乘</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#乘法表"><span class="nav-number">12.</span> <span class="nav-text">乘法表</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#斐波那契数列"><span class="nav-number">13.</span> <span class="nav-text">斐波那契数列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#阿姆斯特朗数"><span class="nav-number">14.</span> <span class="nav-text">阿姆斯特朗数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#进制转"><span class="nav-number">15.</span> <span class="nav-text">进制转</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#最大公约数"><span class="nav-number">16.</span> <span class="nav-text">最大公约数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#最小公倍数"><span class="nav-number">17.</span> <span class="nav-text">最小公倍数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#日历"><span class="nav-number">18.</span> <span class="nav-text">日历</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#递归-斐波那契数列"><span class="nav-number">19.</span> <span class="nav-text">递归 斐波那契数列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#文件输入输出"><span class="nav-number">20.</span> <span class="nav-text">文件输入输出</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#字符串大小写转换"><span class="nav-number">21.</span> <span class="nav-text">字符串大小写转换</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获得昨天日期"><span class="nav-number">22.</span> <span class="nav-text">获得昨天日期</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#约瑟夫环"><span class="nav-number">23.</span> <span class="nav-text">约瑟夫环</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#秒表功能实现"><span class="nav-number">24.</span> <span class="nav-text">秒表功能实现</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#计算n个自然数的立方和"><span class="nav-number">25.</span> <span class="nav-text">计算n个自然数的立方和</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#数组翻转指定个数元素"><span class="nav-number">26.</span> <span class="nav-text">数组翻转指定个数元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#数组首尾对调"><span class="nav-number">27.</span> <span class="nav-text">数组首尾对调</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#指定位置对调"><span class="nav-number">28.</span> <span class="nav-text">指定位置对调</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#正则表达式获取字符串中的url"><span class="nav-number">29.</span> <span class="nav-text">正则表达式获取字符串中的url</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#按key-value排序"><span class="nav-number">30.</span> <span class="nav-text">按key/value排序</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#时间转换"><span class="nav-number">31.</span> <span class="nav-text">时间转换</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#二分查找"><span class="nav-number">32.</span> <span class="nav-text">二分查找</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#线性查找"><span class="nav-number">33.</span> <span class="nav-text">线性查找</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#打印杨辉三角"><span class="nav-number">34.</span> <span class="nav-text">打印杨辉三角</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#白鸡百钱"><span class="nav-number">35.</span> <span class="nav-text">白鸡百钱</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#完全数"><span class="nav-number">36.</span> <span class="nav-text">完全数</span></a></li></ol><li class="nav-item nav-level-5"><a class="nav-link" href="#小游戏"><span class="nav-number"></span> <span class="nav-text">小游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Craps赌博游戏"><span class="nav-number">1.</span> <span class="nav-text">Craps赌博游戏</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#21点"><span class="nav-number">2.</span> <span class="nav-text">21点</span></a></li></ol></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shaoyong</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <script size="100" alpha="0.4" zindex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+
+
+<script>
+  window.livereOptions = {
+    refer: 'posts/50958/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+  
+  <script>
+    (function () {
+
+      firebase.initializeApp({
+        apiKey: 'AIzaSyAch1Z6Jq8h0UqZKPmuRFcwK_dy9e-7FkE',
+        projectId: 'myblog-7265c'
+      })
+
+      function getCount(doc, increaseCount) {
+        //increaseCount will be false when not in article page
+
+        return doc.get().then(function (d) {
+          var count
+          if (!d.exists) { //has no data, initialize count
+            if (increaseCount) {
+              doc.set({
+                count: 1
+              })
+              count = 1
+            }
+            else {
+              count = 0
+            }
+          }
+          else { //has data
+            count = d.data().count
+            if (increaseCount) {
+              if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
+                doc.set({ //increase count
+                  count: count + 1
+                })
+                count++
+              }
+            }
+          }
+          if (window.localStorage && increaseCount) { //mark as visited
+            localStorage.setItem(title, true)
+          }
+
+          return count
+        })
+      }
+
+      function appendCountTo(el) {
+        return function (count) {
+          $(el).append(
+            $('<span>').addClass('post-visitors-count').append(
+              $('<span>').addClass('post-meta-divider').text('|')
+            ).append(
+              $('<span>').addClass('post-meta-item-icon').append(
+                $('<i>').addClass('fa fa-users')
+              )
+              ).append($('<span>').text('阅读次数 ' + count))
+          )
+        }
+      }
+
+      var db = firebase.firestore()
+      var articles = db.collection('articles')
+
+      //https://hexo.io/docs/variables.html
+      var isPost = 'Python 3 实例'.length > 0
+      var isArchive = '' === 'true'
+      var isCategory = ''.length > 0
+      var isTag = ''.length > 0
+
+      if (isPost) { //is article page
+        var title = 'Python 3 实例'
+        var doc = articles.doc(title)
+
+        getCount(doc, true).then(appendCountTo($('.post-meta')))
+      }
+      else if (!isArchive && !isCategory && !isTag) { //is index page
+        var titles = [] //array to titles
+
+        var postsstr = '' //if you have a better way to get titles of posts, please change it
+        eval(postsstr)
+
+        var promises = titles.map(function (title) {
+          return articles.doc(title)
+        }).map(function (doc) {
+          return getCount(doc)
+        })
+        Promise.all(promises).then(function (counts) {
+          var metas = $('.post-meta')
+          counts.forEach(function (val, idx) {
+            appendCountTo(metas[idx])(val)
+          })
+        })
+      }
+    })()
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+    
+      pbOptions = {};
+      
+        pbOptions.iconStyle = "box";
+      
+        pbOptions.boxForm = "horizontal";
+      
+        pbOptions.position = "bottomCenter";
+      
+        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
