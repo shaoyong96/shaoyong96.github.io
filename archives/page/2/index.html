@@ -388,7 +388,7 @@
         
           
         
-        嗯..! 目前共计 15 篇日志。 继续努力。
+        嗯..! 目前共计 16 篇日志。 继续努力。
       </span>
       
 
@@ -413,7 +413,42 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/21/cjzxynjrh000qkcda2yocph1q/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/21/ck0khm7gs0009g4da2jvmhcnm/" itemprop="url">
+            
+              <span itemprop="name">CentOS7查杀nanoWath挖矿木马</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-07-21T19:09:09+08:00" content="2019-07-21">
+          07-21
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2019/07/21/ck0khm7gy000dg4day8r4g3nt/" itemprop="url">
             
               <span itemprop="name">Docker启动Redis</span>
             
@@ -448,7 +483,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/21/cjzxynjrm000skcda3ym3hzvd/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/21/ck0khm7h3000hg4dapl79wdsp/" itemprop="url">
             
               <span itemprop="name">Docker安装RabbitMq</span>
             
@@ -483,7 +518,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/21/cjzxynjrj000rkcdal7db873x/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/21/ck0khm7h0000eg4da01mr9vye/" itemprop="url">
             
               <span itemprop="name">Docker安装Mysql5.7</span>
             
@@ -518,7 +553,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/21/cjzxynjrx0012kcda46baumla/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/21/ck0khm7h8000og4daiw40ecux/" itemprop="url">
             
               <span itemprop="name">在IDEA中使用Dockerfile</span>
             
@@ -553,7 +588,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/19/cjzxynjrc000mkcdafnx4eyuo/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/19/ck0khm7gr0008g4damh25bnl1/" itemprop="url">
             
               <span itemprop="name">Spring Cloud配置SSH连接统一配置中心</span>
             
@@ -628,7 +663,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -661,7 +696,9 @@
         
           
         
-        <span class="site-state-item-count">8</span>
+          
+        
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -720,7 +757,9 @@
         
           
         
-        <span class="site-state-item-count">21</span>
+          
+        
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1238,6 +1277,74 @@
 
 
   
+  
+  <script>
+    
+    function showTime(Counter) {
+      var entries = [];
+      var $visitors = $('.leancloud_visitors');
+
+      $visitors.each(function() {
+        entries.push( $(this).attr('id').trim() );
+      });
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+        .done(function({ results }) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + '')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': '',
+                'X-LC-Key': '',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            if ($('.post-title-link').length >= 1) {
+              showTime(Counter);
+            }
+          
+        });
+    });
+  </script>
+
+
 
   
 

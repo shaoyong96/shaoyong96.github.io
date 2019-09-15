@@ -393,7 +393,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/29/cjzxynjrv0010kcdagzc9bi8b/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/29/ck0khm7iy002gg4dagmh05741/" itemprop="url">
             
               <span itemprop="name">java中Map、Collection接口常用实现类源码浅析</span>
             
@@ -419,7 +419,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/23/cjzxynjqo0002kcdanj0mkt4b/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/23/ck0khm7gc0001g4da9jp9l2xc/" itemprop="url">
             
               <span itemprop="name">Java 设计模式之桥接模式</span>
             
@@ -445,7 +445,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/22/cjzxynjqv0005kcdaa5fqxdzf/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/22/ck0khm7gi0003g4dapl9uihc8/" itemprop="url">
             
               <span itemprop="name">Java 设计模式之适配器模式</span>
             
@@ -471,7 +471,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/16/cjzxynjrq000vkcdasdeta0pv/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/16/ck0khm7h4000jg4dav72wmjbk/" itemprop="url">
             
               <span itemprop="name">Java 中使用Lambda表达式</span>
             
@@ -497,7 +497,7 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/19/cjzxynjrc000mkcdafnx4eyuo/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/19/ck0khm7gr0008g4damh25bnl1/" itemprop="url">
             
               <span itemprop="name">Spring Cloud配置SSH连接统一配置中心</span>
             
@@ -567,7 +567,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -600,7 +600,9 @@
         
           
         
-        <span class="site-state-item-count">8</span>
+          
+        
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -659,7 +661,9 @@
         
           
         
-        <span class="site-state-item-count">21</span>
+          
+        
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1177,6 +1181,74 @@
 
 
   
+  
+  <script>
+    
+    function showTime(Counter) {
+      var entries = [];
+      var $visitors = $('.leancloud_visitors');
+
+      $visitors.each(function() {
+        entries.push( $(this).attr('id').trim() );
+      });
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+        .done(function({ results }) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + '')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': '',
+                'X-LC-Key': '',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            if ($('.post-title-link').length >= 1) {
+              showTime(Counter);
+            }
+          
+        });
+    });
+  </script>
+
+
 
   
 

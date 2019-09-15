@@ -490,11 +490,15 @@
                   
                 
               
-              目前共计 21 个标签
+                
+                  
+                
+              
+              目前共计 22 个标签
             </div>
             <div class="tag-cloud-tags">
               
-                <a href="/tags/Adapter-Pattern/" style="font-size: 12px; color: #ccc">Adapter Pattern</a> <a href="/tags/Bridge-Pattern/" style="font-size: 12px; color: #ccc">Bridge Pattern</a> <a href="/tags/CentOS7/" style="font-size: 12px; color: #ccc">CentOS7</a> <a href="/tags/Collection/" style="font-size: 12px; color: #ccc">Collection</a> <a href="/tags/Dockerflie/" style="font-size: 12px; color: #ccc">Dockerflie</a> <a href="/tags/IDEA/" style="font-size: 30px; color: #111">IDEA</a> <a href="/tags/Java/" style="font-size: 30px; color: #111">Java</a> <a href="/tags/Java-8新特性/" style="font-size: 12px; color: #ccc">Java 8新特性</a> <a href="/tags/Lambda/" style="font-size: 12px; color: #ccc">Lambda</a> <a href="/tags/Map/" style="font-size: 12px; color: #ccc">Map</a> <a href="/tags/Mysql/" style="font-size: 12px; color: #ccc">Mysql</a> <a href="/tags/OOP/" style="font-size: 12px; color: #ccc">OOP</a> <a href="/tags/Python3/" style="font-size: 12px; color: #ccc">Python3</a> <a href="/tags/RabbitMq/" style="font-size: 12px; color: #ccc">RabbitMq</a> <a href="/tags/Redis/" style="font-size: 12px; color: #ccc">Redis</a> <a href="/tags/SSH/" style="font-size: 30px; color: #111">SSH</a> <a href="/tags/Sort/" style="font-size: 12px; color: #ccc">Sort</a> <a href="/tags/实例/" style="font-size: 12px; color: #ccc">实例</a> <a href="/tags/笔试题/" style="font-size: 12px; color: #ccc">笔试题</a> <a href="/tags/练习/" style="font-size: 12px; color: #ccc">练习</a> <a href="/tags/面试/" style="font-size: 12px; color: #ccc">面试</a>
+                <a href="/tags/Adapter-Pattern/" style="font-size: 12px; color: #ccc">Adapter Pattern</a> <a href="/tags/Bridge-Pattern/" style="font-size: 12px; color: #ccc">Bridge Pattern</a> <a href="/tags/CentOS7/" style="font-size: 12px; color: #ccc">CentOS7</a> <a href="/tags/Collection/" style="font-size: 12px; color: #ccc">Collection</a> <a href="/tags/Dockerflie/" style="font-size: 12px; color: #ccc">Dockerflie</a> <a href="/tags/IDEA/" style="font-size: 30px; color: #111">IDEA</a> <a href="/tags/Java/" style="font-size: 30px; color: #111">Java</a> <a href="/tags/Java-8新特性/" style="font-size: 12px; color: #ccc">Java 8新特性</a> <a href="/tags/Lambda/" style="font-size: 12px; color: #ccc">Lambda</a> <a href="/tags/Map/" style="font-size: 12px; color: #ccc">Map</a> <a href="/tags/Mysql/" style="font-size: 12px; color: #ccc">Mysql</a> <a href="/tags/OOP/" style="font-size: 12px; color: #ccc">OOP</a> <a href="/tags/Python3/" style="font-size: 12px; color: #ccc">Python3</a> <a href="/tags/RabbitMq/" style="font-size: 12px; color: #ccc">RabbitMq</a> <a href="/tags/Redis/" style="font-size: 12px; color: #ccc">Redis</a> <a href="/tags/SSH/" style="font-size: 30px; color: #111">SSH</a> <a href="/tags/Sort/" style="font-size: 12px; color: #ccc">Sort</a> <a href="/tags/实例/" style="font-size: 12px; color: #ccc">实例</a> <a href="/tags/笔试题/" style="font-size: 12px; color: #ccc">笔试题</a> <a href="/tags/练习/" style="font-size: 12px; color: #ccc">练习</a> <a href="/tags/轮播图/" style="font-size: 12px; color: #ccc">轮播图</a> <a href="/tags/面试/" style="font-size: 12px; color: #ccc">面试</a>
               
             </div>
           </div>
@@ -554,7 +558,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -587,7 +591,9 @@
         
           
         
-        <span class="site-state-item-count">8</span>
+          
+        
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -646,7 +652,9 @@
         
           
         
-        <span class="site-state-item-count">21</span>
+          
+        
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1168,6 +1176,74 @@
 
 
   
+  
+  <script>
+    
+    function showTime(Counter) {
+      var entries = [];
+      var $visitors = $('.leancloud_visitors');
+
+      $visitors.each(function() {
+        entries.push( $(this).attr('id').trim() );
+      });
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+        .done(function({ results }) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + '')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': '',
+                'X-LC-Key': '',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            if ($('.post-title-link').length >= 1) {
+              showTime(Counter);
+            }
+          
+        });
+    });
+  </script>
+
+
 
   
 
