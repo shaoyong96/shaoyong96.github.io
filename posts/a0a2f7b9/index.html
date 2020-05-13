@@ -114,7 +114,7 @@
 <meta property="og:description" content="最近项目中用到了阿里的EasyExcel，一个简单方便读写excel的工具。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://imagebed.shaoyong.online/images/2020_04_11/1.png">
-<meta property="og:updated_time" content="2020-05-13T15:40:27.592Z">
+<meta property="og:updated_time" content="2020-05-13T16:07:28.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编写一个简单的EasyExcel枚举类转换器">
 <meta name="twitter:description" content="最近项目中用到了阿里的EasyExcel，一个简单方便读写excel的工具。">
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-05-13 23:40:27" itemprop="dateModified" datetime="2020-05-13T23:40:27+08:00">2020-05-13</time>
+                <time title="修改时间：2020-05-14 00:07:28" itemprop="dateModified" datetime="2020-05-14T00:07:28+08:00">2020-05-14</time>
               </span>
             
           
@@ -502,7 +502,7 @@
 <a id="more"></a>
 
 <h1 id="需求场景"><a href="#需求场景" class="headerlink" title="需求场景"></a>需求场景</h1><p>在项目中会定义一些枚举类来保存一些状态值，在存储进数据库时保存的是code,而我们在生成excel时需要展示对应的值。</p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h3 id="原"><a href="#原" class="headerlink" title="原"></a>原</h3><p>需要写入excel的对象</p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="原"><a href="#原" class="headerlink" title="原"></a>原</h2><p>需要写入excel的对象</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestExcel</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 状态</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@ExcelProperty</span>(value = <span class="string">"状态"</span>,converter = StatusEnumConvert.class)</span><br><span class="line">    <span class="keyword">private</span> String status;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>枚举类</p>
@@ -513,7 +513,7 @@
 
 <hr>
 <p>应网友反馈，使用注解和反射改进了转换器，提高复用性；</p>
-<h3 id="改进后"><a href="#改进后" class="headerlink" title="改进后"></a>改进后</h3><p>先自定义一个注解</p>
+<h2 id="改进后"><a href="#改进后" class="headerlink" title="改进后"></a>改进后</h2><p>先自定义一个注解</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.FIELD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> TargetEnum &#123;</span><br><span class="line">    Class&lt;? extends Enum&gt; targetEnum();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>需要转换的枚举类</p>
@@ -862,7 +862,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需求场景"><span class="nav-number">1.</span> <span class="nav-text">需求场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码实现"><span class="nav-number">2.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原"><span class="nav-number">2.0.1.</span> <span class="nav-text">原</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改进后"><span class="nav-number">2.0.2.</span> <span class="nav-text">改进后</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#效果"><span class="nav-number">3.</span> <span class="nav-text">效果</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需求场景"><span class="nav-number">1.</span> <span class="nav-text">需求场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码实现"><span class="nav-number">2.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原"><span class="nav-number">2.1.</span> <span class="nav-text">原</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改进后"><span class="nav-number">2.2.</span> <span class="nav-text">改进后</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#效果"><span class="nav-number">3.</span> <span class="nav-text">效果</span></a></li></ol></div>
             
 
           </div>
