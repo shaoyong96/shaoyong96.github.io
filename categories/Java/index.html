@@ -109,7 +109,7 @@
 <meta name="keywords" content="java python">
 <meta property="og:type" content="website">
 <meta property="og:title" content="博客">
-<meta property="og:url" content="http://www.shaoyong.online/categories/Java/index.html">
+<meta property="og:url" content="http://www.shaoyong.online/categories/java/index.html">
 <meta property="og:site_name" content="博客">
 <meta property="og:description" content="博客在建中...">
 <meta property="og:locale" content="zh-CN">
@@ -125,7 +125,7 @@
 
   
   
-  <link rel="canonical" href="http://www.shaoyong.online/categories/Java/">
+  <link rel="canonical" href="http://www.shaoyong.online/categories/java/">
 
 
 
@@ -136,7 +136,7 @@
 </script>
 
   
-  <title>分类: Java | 博客</title>
+  <title>分类: java | 博客</title>
   
 
 
@@ -223,7 +223,7 @@
     
     
       <a>
-        <img class="custom-logo-image" src="http://shaoyong96.coding.me/imagebed/images/info/logo_white.png" alt="博客">
+        <img class="custom-logo-image" src="http://imagebed.shaoyong.online/images/info/logo_white.png" alt="博客">
       </a>
     
   </div>
@@ -391,7 +391,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Java<small>分类</small>
+        <h1>java<small>分类</small>
         </h1>
       </div>
 
@@ -403,121 +403,17 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/posts/43684/" itemprop="url">
+          <a class="post-title-link" href="/posts/78864db2/" itemprop="url">
             
-              <span itemprop="name">java中Map、Collection接口常用实现类源码浅析</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-29T22:08:58+08:00" content="2019-08-29">
-          08-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/2375/" itemprop="url">
-            
-              <span itemprop="name">Java 设计模式之桥接模式</span>
+              <span itemprop="name">使用微信测试账号实现web端扫码登录</span>
             
           </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-23T16:08:50+08:00" content="2019-08-23">
-          08-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/21579/" itemprop="url">
-            
-              <span itemprop="name">Java 设计模式之适配器模式</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-22T16:55:57+08:00" content="2019-08-22">
-          08-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/38346/" itemprop="url">
-            
-              <span itemprop="name">Java 中使用Lambda表达式</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-16T10:11:16+08:00" content="2019-08-16">
-          08-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/35191/" itemprop="url">
-            
-              <span itemprop="name">Spring Cloud配置SSH连接统一配置中心</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-19T18:30:24+08:00" content="2019-07-19">
-          07-19
+        <time class="post-time" itemprop="dateCreated" datetime="2019-11-05T15:12:39+08:00" content="2019-11-05">
+          11-05
         </time>
       </div>
 
@@ -1232,6 +1128,120 @@
               if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
                 doc.set({ //increase count
                   count: count + 1
+                })
+                count++
+              }
+            }
+          }
+          if (window.localStorage && increaseCount) { //mark as visited
+            localStorage.setItem(title, true)
+          }
+
+          return count
+        })
+      }
+
+      function appendCountTo(el) {
+        return function (count) {
+          $(el).append(
+            $('<span>').addClass('post-visitors-count').append(
+              $('<span>').addClass('post-meta-divider').text('|')
+            ).append(
+              $('<span>').addClass('post-meta-item-icon').append(
+                $('<i>').addClass('fa fa-users')
+              )
+              ).append($('<span>').text('阅读次数 ' + count))
+          )
+        }
+      }
+
+      var db = firebase.firestore()
+      var articles = db.collection('articles')
+
+      //https://hexo.io/docs/variables.html
+      var isPost = ''.length > 0
+      var isArchive = '' === 'true'
+      var isCategory = 'java'.length > 0
+      var isTag = ''.length > 0
+
+      if (isPost) { //is article page
+        var title = ''
+        var doc = articles.doc(title)
+
+        getCount(doc, true).then(appendCountTo($('.post-meta')))
+      }
+      else if (!isArchive && !isCategory && !isTag) { //is index page
+        var titles = [] //array to titles
+
+        var postsstr = 'titles.push("使用微信测试账号实现web端扫码登录");' //if you have a better way to get titles of posts, please change it
+        eval(postsstr)
+
+        var promises = titles.map(function (title) {
+          return articles.doc(title)
+        }).map(function (doc) {
+          return getCount(doc)
+        })
+        Promise.all(promises).then(function (counts) {
+          var metas = $('.post-meta')
+          counts.forEach(function (val, idx) {
+            appendCountTo(metas[idx])(val)
+          })
+        })
+      }
+    })()
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+    
+      pbOptions = {};
+      
+        pbOptions.iconStyle = "box";
+      
+        pbOptions.boxForm = "horizontal";
+      
+        pbOptions.position = "bottomCenter";
+      
+        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
+                 count: count + 1
                 })
                 count++
               }
