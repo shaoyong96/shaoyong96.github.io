@@ -105,21 +105,18 @@
   };
 </script>
 
-  <meta name="description" content="桥接（Bridge）是用于把抽象化与实现化解耦，使得二者可以独立变化。这种类型的设计模式属于结构型模式，它通过提供抽象化和实现化之间的桥接结构，来实现二者的解耦。  简单来说，可以通过桥接模式实现使用相同的抽象方法、不同的桥接实现类获得不同的结果。">
-<meta name="keywords" content="Bridge Pattern">
+  <meta name="description" content="​    将数据从一张表中迁移到另一张表中，在数据量少的情况下很容易实现，而且方法也有很多，但当数据量到了百万、千万级时，不同方法在效率上会有很大差别。">
+<meta name="keywords" content="Mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 设计模式之桥接模式">
-<meta property="og:url" content="http://www.shaoyong.online/posts/2375/index.html">
+<meta property="og:title" content="千万级数据拆分与迁移">
+<meta property="og:url" content="http://www.shaoyong.online/posts/47bc30b3/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="桥接（Bridge）是用于把抽象化与实现化解耦，使得二者可以独立变化。这种类型的设计模式属于结构型模式，它通过提供抽象化和实现化之间的桥接结构，来实现二者的解耦。  简单来说，可以通过桥接模式实现使用相同的抽象方法、不同的桥接实现类获得不同的结果。">
+<meta property="og:description" content="​    将数据从一张表中迁移到另一张表中，在数据量少的情况下很容易实现，而且方法也有很多，但当数据量到了百万、千万级时，不同方法在效率上会有很大差别。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://imagebed.shaoyong.online/images/2019_08_23/bridge.png">
-<meta property="og:image" content="https://imagebed.shaoyong.online/images/2019_08_23/test_result.png">
-<meta property="og:updated_time" content="2019-09-15T10:34:45.985Z">
+<meta property="og:updated_time" content="2020-11-16T14:02:46.702Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 设计模式之桥接模式">
-<meta name="twitter:description" content="桥接（Bridge）是用于把抽象化与实现化解耦，使得二者可以独立变化。这种类型的设计模式属于结构型模式，它通过提供抽象化和实现化之间的桥接结构，来实现二者的解耦。  简单来说，可以通过桥接模式实现使用相同的抽象方法、不同的桥接实现类获得不同的结果。">
-<meta name="twitter:image" content="https://imagebed.shaoyong.online/images/2019_08_23/bridge.png">
+<meta name="twitter:title" content="千万级数据拆分与迁移">
+<meta name="twitter:description" content="​    将数据从一张表中迁移到另一张表中，在数据量少的情况下很容易实现，而且方法也有很多，但当数据量到了百万、千万级时，不同方法在效率上会有很大差别。">
 
 
 
@@ -129,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="http://www.shaoyong.online/posts/2375/">
+  <link rel="canonical" href="http://www.shaoyong.online/posts/47bc30b3/">
 
 
 
@@ -140,7 +137,7 @@
 </script>
 
   
-  <title>Java 设计模式之桥接模式 | 博客</title>
+  <title>千万级数据拆分与迁移 | 博客</title>
   
 
 
@@ -387,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.shaoyong.online/posts/2375/">
+    <link itemprop="mainEntityOfPage" href="http://www.shaoyong.online/posts/47bc30b3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shaoyong">
@@ -404,7 +401,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java 设计模式之桥接模式
+          <h1 class="post-title" itemprop="name headline">千万级数据拆分与迁移
 
               
             
@@ -430,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2019-08-23 16:08:50" itemprop="dateCreated datePublished" datetime="2019-08-23T16:08:50+08:00">2019-08-23</time>
+              <time title="创建时间：2020-11-13 21:50:18" itemprop="dateCreated datePublished" datetime="2020-11-13T21:50:18+08:00">2020-11-13</time>
             </span>
           
 
@@ -445,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-15 18:34:45" itemprop="dateModified" datetime="2019-09-15T18:34:45+08:00">2019-09-15</time>
+                <time title="修改时间：2020-11-16 22:02:46" itemprop="dateModified" datetime="2020-11-16T22:02:46+08:00">2020-11-16</time>
               </span>
             
           
@@ -459,14 +456,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
 
                 
                 
@@ -506,40 +496,55 @@
       
 
       
-        <blockquote>
-<p>桥接（Bridge）是用于把抽象化与实现化解耦，使得二者可以独立变化。这种类型的设计模式属于结构型模式，它通过提供抽象化和实现化之间的桥接结构，来实现二者的解耦。</p>
-</blockquote>
-<p>简单来说，可以通过桥接模式实现使用相同的抽象方法、不同的桥接实现类获得不同的结果。</p>
+        <p>​    将数据从一张表中迁移到另一张表中，在数据量少的情况下很容易实现，而且方法也有很多，但当数据量到了百万、千万级时，不同方法在效率上会有很大差别。</p>
 <a id="more"></a>
 
-<p>猪八戒转世成为猪，孙悟空是转世成为猴子，他们的“灵魂”是同类的，但“肉身”不同。下面用代码来模拟这种关系；</p>
-<h2 id="类继承-实现关系简图"><a href="#类继承-实现关系简图" class="headerlink" title="类继承/实现关系简图"></a>类继承/实现关系简图</h2><p><img src="https://imagebed.shaoyong.online/images/2019_08_23/bridge.png" alt></p>
-<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><ol>
-<li><p>创建转世接口</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TurnAPI</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**  转世肉体 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">body</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建转世接口的实现类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Pig</span> <span class="keyword">implements</span> <span class="title">TurnAPI</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">body</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"猪！"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p>项目在运行时会存储实时数据，主表每秒插入2,3条数据，一条主数据对应10条左右明细数据，现在数据库中，主表1千万条，明细8千万；需求是要根据主表中的<code>type</code>字段进行分类，将主表和明细表拆再拆出2张表。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>项目在运行，实时会有数据存入，所以分为3个阶段；原表<code>alarm</code>为主表，<code>alarm_detail</code>为明细表；</p>
+<p>1、将数据按类型从原表中导出为文件，再导入到对应的新建表中</p>
+<p>2、项目暂停，执行替换sql，更新代码，重启项目</p>
+<p>3、将在导入导出期间产生的数据再次按类型插入到新表中</p>
+<h3 id="一、项目正常运行，代码未更新"><a href="#一、项目正常运行，代码未更新" class="headerlink" title="一、项目正常运行，代码未更新"></a>一、项目正常运行，代码未更新</h3><h4 id="复制alarm-与-alarm-detail-表"><a href="#复制alarm-与-alarm-detail-表" class="headerlink" title="复制alarm 与 alarm_detail 表"></a>复制alarm 与 alarm_detail 表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE alarm_copy1 LIKE alarm;</span><br><span class="line">CREATE TABLE alarm_detail_copy1 LIKE alarm_detail;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Monkey</span> <span class="keyword">implements</span> <span class="title">TurnAPI</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">body</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"猴子！"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建抽象灵魂类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Soul</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** 将TurnAPI作为属性注入Soul，这是实现桥接的关键 */</span></span><br><span class="line">    <span class="keyword">protected</span> TurnAPI turnAPI;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Soul</span><span class="params">(String name, TurnAPI turnAPI)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.turnAPI=turnAPI;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title">body</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title">type</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建抽象灵魂类的子类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">God</span> <span class="keyword">extends</span> <span class="title">Soul</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">God</span><span class="params">(String name, TurnAPI turnAPI)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, turnAPI);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">body</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> turnAPI.body();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">type</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"神"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="新建alarm-2表与明细表alarm-2-detail"><a href="#新建alarm-2表与明细表alarm-2-detail" class="headerlink" title="新建alarm_2表与明细表alarm_2_detail"></a>新建alarm_2表与明细表alarm_2_detail</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `alarm_2`  (</span><br><span class="line">  `id` bigint(20) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `alarmId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT &apos;告警Id&apos;,</span><br><span class="line">    `type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`id`) USING BTREE,</span><br><span class="line">  UNIQUE INDEX `alarmId`(`alarmId`) USING BTREE</span><br><span class="line">) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = &apos;主表&apos; ROW_FORMAT = Dynamic;</span><br><span class="line"></span><br><span class="line">CREATE TABLE `alarm_2_detail`  (</span><br><span class="line">  `id` bigint(20) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `iotId` bigint(20) NOT NULL,</span><br><span class="line">  `paramValue` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`id`) USING BTREE,</span><br><span class="line">  INDEX `iotId`(`iotId`) USING BTREE,</span><br><span class="line">	CONSTRAINT `fk_iotId` FOREIGN KEY (`iotId`) REFERENCES `alarm_2` (`id`) ON DELETE CASCADE</span><br><span class="line">) ENGINE = InnoDB AUTO_INCREMENT = 0 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = &apos;明细表&apos; ROW_FORMAT = Compact;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Monster</span> <span class="keyword">extends</span> <span class="title">Soul</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Monster</span><span class="params">(String name, TurnAPI turnAPI)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, turnAPI);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">body</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> turnAPI.body();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">type</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"妖"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建测试类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Soul tianPeng = <span class="keyword">new</span> God(<span class="string">"猪八戒"</span>, <span class="keyword">new</span> Pig());</span><br><span class="line">        Soul monkeyKing = <span class="keyword">new</span> God(<span class="string">"孙悟空"</span>, <span class="keyword">new</span> Monkey());</span><br><span class="line">        Soul sixEar = <span class="keyword">new</span> Monster(<span class="string">"六耳猕猴"</span>, <span class="keyword">new</span> Monkey());</span><br><span class="line">        System.out.println(<span class="string">"灵魂："</span> + tianPeng.getName() + <span class="string">"，肉身："</span> + tianPeng.body()+<span class="string">"，属性："</span>+tianPeng.type());</span><br><span class="line">        System.out.println(<span class="string">"灵魂："</span> + monkeyKing.getName() + <span class="string">"，肉身："</span> + monkeyKing.body()+<span class="string">"，属性："</span>+monkeyKing.type());</span><br><span class="line">        System.out.println(<span class="string">"灵魂："</span> + sixEar.getName() + <span class="string">"，肉身："</span> + sixEar.body()+<span class="string">"，属性："</span>+sixEar.type());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="获取原表主键最大id"><a href="#获取原表主键最大id" class="headerlink" title="获取原表主键最大id"></a>获取原表主键最大id</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT @maxId:=MAX(id) FROM alarm;</span><br></pre></td></tr></table></figure>
 
-<p>执行结果</p>
-<p><img src="https://imagebed.shaoyong.online/images/2019_08_23/test_result.png" alt></p>
-</li>
-</ol>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>通过上面代码，实现了将猪八戒的灵魂放进了猪的肉体内，将孙悟空的灵魂放进了猴子的肉体内；灵魂的具体类也有妖和神的区别，上面也实现了将六耳猕猴的灵魂放进猴子肉体中，当然也可以放进猪内；</p>
-<p>由上可知，桥接模式适用于两个独立变化的维度之间。通过桥接模式，我们可以将不同的实现类和不同的接口实现进行连接。使用桥接模式避免了抽象类实现接口，抽象与实现分离；由于桥接模式是在抽象层面建立关联关系，这也加大了系统的设计与理解难度。</p>
+<h4 id="导出出A类型主数据，再导入新表"><a href="#导出出A类型主数据，再导入新表" class="headerlink" title="导出出A类型主数据，再导入新表"></a>导出出A类型主数据，再导入新表</h4><p><code>FIELDS TERMINATED BY &#39;,&#39;</code>表示字段间用<code>,</code>分割</p>
+<p><code>OPTIONALLY ENCLOSED BY &#39;&quot;&#39;</code>表示所有字符用<code>&quot;</code>包裹</p>
+<p><code>ESCAPED BY &#39;*&#39;</code>表示用<code>*</code>代表转义字符</p>
+<p><code>LINES TERMINATED BY &#39;\r\n&#39;</code>表示每条数据用空格加回车结束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM alarm WHERE id&lt;@maxId AND type=&apos;A&apos; INTO OUTFILE &apos;alarm_2.txt&apos; FIELDS TERMINATED BY &apos;,&apos; OPTIONALLY ENCLOSED BY &apos;&quot;&apos; ESCAPED BY &apos;*&apos; LINES TERMINATED BY &apos;\r\n&apos;;</span><br><span class="line">#导入</span><br><span class="line">LOAD DATA INFILE &apos;alarm_2.txt&apos; INTO TABLE alarm_2 FIELDS TERMINATED BY &apos;,&apos; ENCLOSED BY &apos;&quot;&apos; ESCAPED BY &apos;*&apos; LINES TERMINATED BY &apos;\r\n&apos;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="导出出A类型明细数据，再导入新表"><a href="#导出出A类型明细数据，再导入新表" class="headerlink" title="导出出A类型明细数据，再导入新表"></a>导出出A类型明细数据，再导入新表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT ad.* FROM alarm_detail ad WHERE EXISTS (SELECT iotId FROM alarm a WHERE ad.iotId=a.id) INTO OUTFILE &apos;alarm_2_detail.txt&apos; FIELDS TERMINATED BY &apos;,&apos; OPTIONALLY ENCLOSED BY &apos;&quot;&apos; ESCAPED BY &apos;*&apos; LINES TERMINATED BY &apos;\r\n&apos;;</span><br><span class="line">LOAD DATA INFILE &apos;alarm_2_detail.txt&apos; INTO TABLE alarm_2_detail FIELDS TERMINATED BY &apos;,&apos; ENCLOSED BY &apos;&quot;&apos; ESCAPED BY &apos;*&apos; LINES TERMINATED BY &apos;\r\n&apos;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="导出出B类型主数据，再导入copy表"><a href="#导出出B类型主数据，再导入copy表" class="headerlink" title="导出出B类型主数据，再导入copy表"></a>导出出B类型主数据，再导入copy表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM alarm WHERE id&lt;@maxId AND type=&apos;A&apos; INTO OUTFILE &apos;alarm_copy1.txt&apos; FIELDS TERMINATED BY &apos;,&apos; OPTIONALLY ENCLOSED BY &apos;&quot;&apos; ESCAPED BY &apos;*&apos; LINES TERMINATED BY &apos;\r\n&apos;;</span><br><span class="line">LOAD DATA INFILE &apos;alarm_copy1.txt&apos; INTO TABLE alarm_copy1 FIELDS TERMINATED BY &apos;,&apos; ENCLOSED BY &apos;&quot;&apos; ESCAPED BY &apos;*&apos; LINES TERMINATED BY &apos;\r\n&apos;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="导出出B类型明细数据，再导入新表"><a href="#导出出B类型明细数据，再导入新表" class="headerlink" title="导出出B类型明细数据，再导入新表"></a>导出出B类型明细数据，再导入新表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT ad.* FROM alarm_detail ad WHERE EXISTS (SELECT iotId FROM alarm_copy1 ac WHERE ac.iotId=ad.id) INTO OUTFILE &apos;alarm_detail_copy1.txt&apos; FIELDS TERMINATED BY &apos;,&apos; OPTIONALLY ENCLOSED BY &apos;&quot;&apos; ESCAPED BY &apos;*&apos; LINES TERMINATED BY &apos;\r\n&apos;;</span><br><span class="line">LOAD DATA INFILE &apos;alarm_detail_copy1.txt&apos; INTO TABLE alarm_detail_copy1 FIELDS TERMINATED BY &apos;,&apos; ENCLOSED BY &apos;&quot;&apos; ESCAPED BY &apos;*&apos; LINES TERMINATED BY &apos;\r\n&apos;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、项目暂停、更新代码"><a href="#二、项目暂停、更新代码" class="headerlink" title="二、项目暂停、更新代码"></a>二、项目暂停、更新代码</h3><p>项目需要暂停几分钟，修改表名并更新代码</p>
+<h4 id="修改表名称"><a href="#修改表名称" class="headerlink" title="修改表名称"></a>修改表名称</h4><p>将*_copy1表名与原表互换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE alarm RENAME TO alarm_temp;</span><br><span class="line">ALTER TABLE alarm_detail RENAME TO alarm_detail_temp;</span><br><span class="line">ALTER TABLE alarm_copy1 RENAME TO alarm;</span><br><span class="line">ALTER TABLE alarm_detail_copy1 RENAME TO alarm_detail;</span><br><span class="line">ALTER TABLE alarm_temp RENAME TO alarm_copy1;</span><br><span class="line">ALTER TABLE alarm_detail_temp RENAME TO alarm_detail_copy1;</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改自增数"><a href="#修改自增数" class="headerlink" title="修改自增数"></a>修改自增数</h4><p>为了保证在新数据插入新表后不会与暂未拆分数据主键冲突，需要将所有表的自增值改为原表自增数大小，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#创建存储过程修改自增值</span><br><span class="line">DROP PROCEDURE IF EXISTS copy_auto_increment;</span><br><span class="line">CREATE PROCEDURE `copy_auto_increment`(IN `sourceTable` varchar(50),IN `targetTable` varchar(50))</span><br><span class="line">BEGIN</span><br><span class="line">	DECLARE num BIGINT;</span><br><span class="line">	DECLARE alterSql VARCHAR(250);</span><br><span class="line">	SELECT AUTO_INCREMENT INTO num FROM information_schema.tables WHERE table_name = sourceTable AND table_schema = DATABASE();</span><br><span class="line">	SET num=num+100;</span><br><span class="line">	SET alterSql=CONCAT(&apos;ALTER TABLE &apos;,targetTable,&apos; AUTO_INCREMENT=&apos;,num);</span><br><span class="line">	EXECUTE alterSql;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+
+<p>修改<code>alarm</code>、<code>alarm_detail</code>、<code>alarm_2</code>、<code>alarm_2_detail</code>的自增数（大于原表目前的自增数值即可）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#调用</span><br><span class="line">CALL copy_auto_increment(&apos;iot_alarm_copy1&apos;,&apos;iot_alarm&apos;);</span><br><span class="line">CALL copy_auto_increment(&apos;iot_alarm_copy1&apos;,&apos;iot_alarm_fault&apos;);</span><br><span class="line">CALL copy_auto_increment(&apos;iot_alarm_detail_copy1&apos;,&apos;iot_alarm_detail&apos;);</span><br><span class="line">CALL copy_auto_increment(&apos;iot_alarm_detail_copy1&apos;,&apos;iot_alarm_detail_fault&apos;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="查询已拆分数据的最大id-并记录"><a href="#查询已拆分数据的最大id-并记录" class="headerlink" title="查询已拆分数据的最大id,并记录"></a>查询已拆分数据的最大id,并记录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT @maxId:=MAX(a.id) MAXId FROM(</span><br><span class="line">SELECT MAX(id) id FROM iot_alarm</span><br><span class="line">UNION</span><br><span class="line">SELECT MAX(id) id FROM iot_alarm_fault)a;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、代码更新完成，项目启动"><a href="#三、代码更新完成，项目启动" class="headerlink" title="三、代码更新完成，项目启动"></a>三、代码更新完成，项目启动</h3><p>现在在*_copy1表中还有未拆分的数据，现在再进行拆分</p>
+<h4 id="创建拆分存储过程"><a href="#创建拆分存储过程" class="headerlink" title="创建拆分存储过程"></a>创建拆分存储过程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">DROP PROCEDURE IF EXISTS post_alarm_split;</span><br><span class="line">CREATE PROCEDURE `post_alarm_split`(IN `maxId` bigint)</span><br><span class="line">BEGIN</span><br><span class="line">	-- 定义接收游标数据的变量 </span><br><span class="line">	DECLARE done BOOLEAN DEFAULT 0;</span><br><span class="line">	DECLARE var_id BIGINT DEFAULT 0;</span><br><span class="line">	DECLARE var_alarmId VARCHAR(50);</span><br><span class="line">	DECLARE var_type VARCHAR(50);</span><br><span class="line">	</span><br><span class="line">	DECLARE cur_alarm CURSOR FOR (SELECT id,alarmId,type FROM iot_alarm_copy1 WHERE id&gt;=maxId ORDER BY id);</span><br><span class="line">	#退出标志</span><br><span class="line">	DECLARE CONTINUE HANDLER FOR SQLSTATE &apos;02000&apos; SET done = 1 ;</span><br><span class="line">	OPEN cur_alarm;</span><br><span class="line">		</span><br><span class="line">	REPEAT</span><br><span class="line">		FETCH cur_alarm INTO var_id,var_alarmId,var_type;</span><br><span class="line">		IF NOT done THEN</span><br><span class="line">			#A类</span><br><span class="line">			IF var_type=&apos;A&apos; THEN</span><br><span class="line">				INSERT INTO alarm_2 VALUES(var_id,var_alarmId,var_type);</span><br><span class="line">				INSERT INTO alarm_2_detail (SELECT id,iotId,paramValue FROM alarm_detail_copy1 WHERE iotId = var_id);</span><br><span class="line">			#B类</span><br><span class="line">			ELSE</span><br><span class="line">				INSERT INTO alarm VALUES(var_id,var_alarmId,var_type);</span><br><span class="line">				INSERT INTO alarm_detail (SELECT id,iotId,paramValue FROM alarm_detail_copy1 WHERE iotId = var_id);</span><br><span class="line">			END IF;</span><br><span class="line">		END IF;</span><br><span class="line">	UNTIL done END REPEAT;</span><br><span class="line">	CLOSE cur_alarm;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+
+<h4 id="执行拆分"><a href="#执行拆分" class="headerlink" title="执行拆分"></a>执行拆分</h4><p><code>@maxId</code>为之前已拆分过数据的最大主键id+1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#后置拆分</span><br><span class="line">CALL post_alarm_split(@maxId);</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>1、这种拆分方式适合主键<code>id</code>自增的情况</p>
+<p>2、项目重启后的拆分也可以使用导入导出的方式拆，重点是记录好已拆分的<code>id</code></p>
+<p>3、利用导出导入的方式可以大大提高数据迁移的效率</p>
+<p>4、如果预计某些表数据量会很大时，可以考虑在表创建时就进行分区、或分表</p>
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>导出时生成的文件在mysql的Data目录下，可以删除，节省服务器存储空间</p>
 
       
     </div>
@@ -578,7 +583,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://www.shaoyong.online/posts/2375/" title="Java 设计模式之桥接模式">http://www.shaoyong.online/posts/2375/</a>
+    <a href="http://www.shaoyong.online/posts/47bc30b3/" title="千万级数据拆分与迁移">http://www.shaoyong.online/posts/47bc30b3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -594,7 +599,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Bridge-Pattern/" rel="tag"># Bridge Pattern</a>
+            <a href="/tags/Mysql/" rel="tag"># Mysql</a>
           
         </div>
       
@@ -627,8 +632,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/21579/" rel="next" title="Java 设计模式之适配器模式">
-                <i class="fa fa-chevron-left"></i> Java 设计模式之适配器模式
+              <a href="/posts/73fc1757/" rel="next" title="Activiti6.0流程模型导入">
+                <i class="fa fa-chevron-left"></i> Activiti6.0流程模型导入
               </a>
             
           </div>
@@ -636,10 +641,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/43684/" rel="prev" title="java中Map、Collection接口常用实现类源码浅析">
-                java中Map、Collection接口常用实现类源码浅析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -871,7 +872,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类继承-实现关系简图"><span class="nav-number">1.</span> <span class="nav-text">类继承/实现关系简图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体实现"><span class="nav-number">2.</span> <span class="nav-text">具体实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#业务场景"><span class="nav-number">1.</span> <span class="nav-text">业务场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、项目正常运行，代码未更新"><span class="nav-number">2.1.</span> <span class="nav-text">一、项目正常运行，代码未更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#复制alarm-与-alarm-detail-表"><span class="nav-number">2.1.1.</span> <span class="nav-text">复制alarm 与 alarm_detail 表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建alarm-2表与明细表alarm-2-detail"><span class="nav-number">2.1.2.</span> <span class="nav-text">新建alarm_2表与明细表alarm_2_detail</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取原表主键最大id"><span class="nav-number">2.1.3.</span> <span class="nav-text">获取原表主键最大id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导出出A类型主数据，再导入新表"><span class="nav-number">2.1.4.</span> <span class="nav-text">导出出A类型主数据，再导入新表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导出出A类型明细数据，再导入新表"><span class="nav-number">2.1.5.</span> <span class="nav-text">导出出A类型明细数据，再导入新表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导出出B类型主数据，再导入copy表"><span class="nav-number">2.1.6.</span> <span class="nav-text">导出出B类型主数据，再导入copy表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导出出B类型明细数据，再导入新表"><span class="nav-number">2.1.7.</span> <span class="nav-text">导出出B类型明细数据，再导入新表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、项目暂停、更新代码"><span class="nav-number">2.2.</span> <span class="nav-text">二、项目暂停、更新代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表名称"><span class="nav-number">2.2.1.</span> <span class="nav-text">修改表名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改自增数"><span class="nav-number">2.2.2.</span> <span class="nav-text">修改自增数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询已拆分数据的最大id-并记录"><span class="nav-number">2.2.3.</span> <span class="nav-text">查询已拆分数据的最大id,并记录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、代码更新完成，项目启动"><span class="nav-number">2.3.</span> <span class="nav-text">三、代码更新完成，项目启动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建拆分存储过程"><span class="nav-number">2.3.1.</span> <span class="nav-text">创建拆分存储过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行拆分"><span class="nav-number">2.3.2.</span> <span class="nav-text">执行拆分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#备注"><span class="nav-number">3.1.</span> <span class="nav-text">备注</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1038,7 +1039,7 @@
 
 <script>
   window.livereOptions = {
-    refer: 'posts/2375/'
+    refer: 'posts/47bc30b3/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
@@ -1445,13 +1446,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = 'Java 设计模式之桥接模式'.length > 0
+      var isPost = '千万级数据拆分与迁移'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'Java 设计模式之桥接模式'
+        var title = '千万级数据拆分与迁移'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
